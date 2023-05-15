@@ -13,7 +13,7 @@
             @foreach ($products as $product)
             <div class="row p-2 bg-white border rounded mt-2 wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
                 <div class="col-md-3 mt-1">
-                    <img class="img-fluid img-responsive rounded product-image" alt="{{ $product->name }}" src="{{ $product->images->first()->image }}">
+                    <img class="img-fluid img-responsive rounded product-image" alt="{{ $product->name }}" src="{{ $product->images->first()?->image }}">
                 </div>
                 <div class="col-md-6 mt-1">
                     <h5>{{ $product->name }}</h5>

@@ -31,34 +31,6 @@
     </div>
 </div>
 
-
-<div class="container p-0">
-    <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Electronics and Gadgets</h5></div>
-        <div class="mt-3"><a href="/category/2">See More <i class="bi bi-arrow-right"></i></a></div>
-    </div>
-    <div class="row py-2">
-        @foreach ($electronics as $product)
-        <div class="col-sm-3 mb-3">
-            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
-                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-                <a href="{{ route('product', $product->id ) }}">
-                    <div class="img-box">
-                        <img src="{{ $product->images->first()->image }}" class="img-fluid" alt="Speaker">
-                    </div>
-                </a>
-                <div class="thumb-content">
-                    <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
-                    <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
-                </div>						
-            </div>
-        </div> 
-        @endforeach
-    </div>
-</div>
-
-
 <div class="container p-0">
    
 
@@ -69,10 +41,10 @@
     <div class="row">
         @foreach ($clothing as $product)
         <div class="col-md-3">
-            <div class="thumb-wrapper text-start p-0 overflow-hidden" >
+            <div class="thumb-wrapper text-start p-0 overflow-hidden">
                 <div class="image-container">
                     <a href="{{ route('product', $product->id )}}">
-                        <img src="{{ $product->images->first()->image }}" class="img-fluid border-bottom"> 
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid border-bottom"> 
                     </a>
                 </div>
                 <div class="product-detail-container p-2">
@@ -92,4 +64,161 @@
     </div>
 </div>
 
+
+<div class="container p-0">
+    <div class="d-flex justify-content-between">
+        <div><h5 class="mt-3 mb-0">Electronics and Gadgets</h5></div>
+        <div class="mt-3"><a href="/category/2">See More <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="row py-2">
+        @foreach ($electronics as $product)
+        <div class="col-sm-3 mb-3">
+            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <a href="{{ route('product', $product->id ) }}">
+                    <div class="img-box">
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
+                    </div>
+                </a>
+                <div class="thumb-content">
+                    <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
+                    <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                </div>						
+            </div>
+        </div> 
+        @endforeach
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="d-flex justify-content-between">
+        <div><h5 class="mt-3 mb-0">Home and Garden</h5></div>
+        <div class="mt-3"><a href="/category/3">See More <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="row py-2">
+        @foreach ($Home as $product)
+        <div class="col-sm-3 mb-3">
+            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <a href="{{ route('product', $product->id ) }}">
+                    <div class="img-box">
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
+                    </div>
+                </a>
+                <div class="thumb-content">
+                    <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
+                    <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                </div>						
+            </div>
+        </div> 
+        @endforeach
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="d-flex justify-content-between">
+        <div><h5 class="mt-3 mb-0">Health and Beauty</h5></div>
+        <div class="mt-3"><a href="/category/4">See More <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="row py-2">
+        @foreach ($Health as $product)
+        <div class="col-sm-3 mb-3">
+            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <a href="{{ route('product', $product->id ) }}">
+                    <div class="img-box">
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
+                    </div>
+                </a>
+                <div class="thumb-content">
+                    <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
+                    <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                </div>						
+            </div>
+        </div> 
+        @endforeach
+    </div>
+</div>
+
+
+<div class="container p-0">
+    <div class="d-flex justify-content-between">
+        <div><h5 class="mt-3 mb-0">Sports and Fitness</h5></div>
+        <div class="mt-3"><a href="/category/5">See More <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="row py-2">
+        @foreach ($Sports as $product)
+        <div class="col-sm-3 mb-3">
+            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <a href="{{ route('product', $product->id ) }}">
+                    <div class="img-box">
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
+                    </div>
+                </a>
+                <div class="thumb-content">
+                    <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
+                    <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                </div>						
+            </div>
+        </div> 
+        @endforeach
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="d-flex justify-content-between">
+        <div><h5 class="mt-3 mb-0">Toys and Games</h5></div>
+        <div class="mt-3"><a href="/category/6">See More <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="row py-2">
+        @foreach ($Toys as $product)
+        <div class="col-sm-3 mb-3">
+            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <a href="{{ route('product', $product->id ) }}">
+                    <div class="img-box">
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
+                    </div>
+                </a>
+                <div class="thumb-content">
+                    <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
+                    <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                </div>						
+            </div>
+        </div> 
+        @endforeach
+    </div>
+</div>
+
+<div class="container p-0">
+    <div class="d-flex justify-content-between">
+        <div><h5 class="mt-3 mb-0">Books and Media</h5></div>
+        <div class="mt-3"><a href="/category/7">See More <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="row py-2">
+        @foreach ($Books as $product)
+        <div class="col-sm-3 mb-3">
+            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <a href="{{ route('product', $product->id ) }}">
+                    <div class="img-box">
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
+                    </div>
+                </a>
+                <div class="thumb-content">
+                    <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
+                    <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                </div>						
+            </div>
+        </div> 
+        @endforeach
+    </div>
+</div>
 @endsection

@@ -70,40 +70,6 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5 border-bottom">
-        <a href="/" class="navbar-brand d-flex align-items-center">
-            <h2 class="m-0 text-primary"><img class="img-fluid me-2" src="/assets/img/icon-1.png" alt=""
-                    style="width: 45px;"></h2>
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-4 py-lg-0">
-                <a href="/" class="nav-item nav-link active">Home</a>
-                <a href="/product/list" class="nav-item nav-link">Products</a>
-                <a href="/category/list" class="nav-item nav-link">Categories</a>
-                <a href="/contact" class="nav-item nav-link">Contact Us</a>
-            </div>
-            @auth
-            <div class="d-flex">
-                <a class="btn btn-square rounded-circle me-1" href="https://www.twitter.com/meryshop" target="_blank"><i class="fab fa-bag"></i></a>
-                <a class="btn btn-square rounded-circle me-1" href="https://www.facebook.com/meryshop" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle me-1" href="https://www.youtube.com/meryshop" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/meryshop" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            @endauth
-
-            @unless (Auth::check())
-            <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a href="{{ route('register') }}" class="btn btn-primary mx-1">Register</a>
-                <a href="{{ route('login') }}" class="btn btn-outline-primary mx-1">Login</a>
-            </div> 
-            @endunless
-
-        </div>
-    </nav>
 
 
     <div class="overlay" data-overlay></div>

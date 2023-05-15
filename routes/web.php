@@ -22,12 +22,22 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    $electronics = Product::where('category', 2)->paginate(4);
     $clothing = Product::where('category', 1)->paginate(4);
+    $electronics = Product::where('category', 2)->paginate(4);
+    $Home= Product::where('category', 3)->paginate(4);
+    $Health = Product::where('category', 4)->paginate(4);
+    $Sports = Product::where('category', 5)->paginate(4);
+    $Toys = Product::where('category', 6)->paginate(4);
+    $Books = Product::where('category', 7)->paginate(4);
     return view('index',[
         'products' => Product::paginate(15),
-        'electronics' => $electronics,
         'clothing' => $clothing,
+        'electronics' => $electronics,
+        'Home' => $Home,
+        'Health' => $Health,
+        'Sports' => $Sports,
+        'Toys' => $Toys,
+        'Books' => $Books,
         'categories' => Category::paginate(8)
     ]);
 });
