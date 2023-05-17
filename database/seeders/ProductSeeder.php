@@ -261,6 +261,16 @@ class ProductSeeder extends Seeder
 
             //22
             [
+                'name' => "cover table",
+                'price' => 134,
+                'old_price' => 160,
+                'stock' => 200,
+                'description' => "cover table ",
+                'status' => true,
+                'user'=>1,
+                'category' => 3
+            ],
+            [
                 'name' => "MAISON ARTS Chaise de jardin",
                 'price' => 1034,
                 'old_price' => 1600,
@@ -497,7 +507,7 @@ class ProductSeeder extends Seeder
                 'description' => "1 pièce créatif multifonctionnel Bijou design livre Boîte de rangement de bijoux pour domicile",
                 'status' => true,
                 'user'=>1,
-                'category' => 6
+                'category' => 7
             ],
 
             //45
@@ -509,7 +519,7 @@ class ProductSeeder extends Seeder
                 'description' => "1 pièce transparent décoratif simple à usages multiples bureau Serre-livres pour Livre stockage",
                 'status' => true,
                 'user'=>1,
-                'category' => 6
+                'category' => 7
             ],
 
 

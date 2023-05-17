@@ -667,420 +667,425 @@ class ProductImagesSeeder extends Seeder
 
         ProductImages::create([
             'image' => '/fake/products/nettoyage-1.png',
-            "product" =>31
+            "product" =>28
         ]);
         ProductImages::create([
             'image' => '/fake/products/nettoyage-2.png',
-            "product" =>31
+            "product" =>28
         ]);
         ProductImages::create([
             'image' => '/fake/products/nettoyage-3.png',
-            "product" =>31
+            "product" =>28
         ]);
         ProductImages::create([
             'image' => '/fake/products/nettoyage-4.png',
-            "product" =>31
+            "product" =>28
         ]);
         ProductImages::create([
             'image' => '/fake/products/nettoyage-5.png',
-            "product" =>31
+            "product" =>28
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/50piece-1.png',
-            "product" =>32
+            "product" =>29
+
         ]);
         ProductImages::create([
             'image' => '/fake/products/50piece-2.png',
-            "product" =>32
+            "product" =>29
+
         ]);
         ProductImages::create([
             'image' => '/fake/products/50piece-3.png',
-            "product" =>32
+            "product" =>29
+
         ]);
         ProductImages::create([
             'image' => '/fake/products/50piece-4.png',
-            "product" =>32
+            "product" =>29
+
         ]);
         ProductImages::create([
             'image' => '/fake/products/50piece-5.png',
-            "product" =>32
+            "product" =>29
+
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/colorBouche-1.png',
-            "product" =>33
+            "product" =>30
         ]);
         ProductImages::create([
             'image' => '/fake/products/colorBouche-2.png',
-            "product" =>33
+            "product" =>30
         ]);
         ProductImages::create([
             'image' => '/fake/products/colorBouche-3.png',
-            "product" =>33
+            "product" =>30
         ]);
         ProductImages::create([
             'image' => '/fake/products/colorBouche-4.png',
-            "product" =>33
+            "product" =>30
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/pinceaux-1.png',
-            "product" =>34
+            "product" =>31
         ]);
         ProductImages::create([
             'image' => '/fake/products/pinceaux-2.png',
-            "product" =>34
+            "product" =>31
         ]);
         ProductImages::create([
             'image' => '/fake/products/pinceaux-3.png',
-            "product" =>34
+            "product" =>31
         ]);
         ProductImages::create([
             'image' => '/fake/products/pinceaux-4.png',
-            "product" =>34
+            "product" =>31
         ]);
         ProductImages::create([
             'image' => '/fake/products/pinceaux-5.png',
-            "product" =>34
+            "product" =>31
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/piece-coloration-1.png',
-            "product" =>35
+            "product" =>32
         ]);
         ProductImages::create([
             'image' => '/fake/products/piece-coloration-2.png',
-            "product" =>35
+            "product" =>32
         ]);
         ProductImages::create([
             'image' => '/fake/products/piece-coloration-3.png',
-            "product" =>35
+            "product" =>32
         ]);
         ProductImages::create([
             'image' => '/fake/products/piece-coloration-4.png',
-            "product" =>35
+            "product" =>32
         ]);
         ProductImages::create([
             'image' => '/fake/products/piece-coloration-4.png',
-            "product" =>35
+            "product" =>32
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/Clip-cheveux-1.png',
-            "product" =>36
+            "product" =>33
         ]);
         ProductImages::create([
             'image' => '/fake/products/Clip-cheveux-2.png',
-            "product" =>36
+            "product" =>33
         ]);
         ProductImages::create([
             'image' => '/fake/products/Clip-cheveux-3.png',
-            "product" =>36
+            "product" =>33
         ]);
         ProductImages::create([
             'image' => '/fake/products/Clip-cheveux-4.png',
-            "product" =>36
+            "product" =>33
         ]);
         ProductImages::create([
             'image' => '/fake/products/Clip-cheveux-5.png',
-            "product" =>36
+            "product" =>33
         ]);
         ProductImages::create([
             'image' => '/fake/products/Clip-cheveux-6.png',
-            "product" =>36
+            "product" =>33
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/Pallete-1.png',
-            "product" =>37
+            "product" =>34
         ]);
         ProductImages::create([
             'image' => '/fake/products/Pallete-3.png',
-            "product" =>37
+            "product" =>34
         ]);
         ProductImages::create([
             'image' => '/fake/products/Pallete-4.png',
-            "product" =>37
+            "product" =>34
         ]);
         ProductImages::create([
             'image' => '/fake/products/Pallete-5.png',
-            "product" =>37
+            "product" =>34
         ]);
         ProductImages::create([
             'image' => '/fake/products/Pallete-6.png',
-            "product" =>37
+            "product" =>34
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/10pallete.png',
-            "product" =>38
+            "product" =>35
         ]);
         ProductImages::create([
             'image' => '/fake/products/10pallete-1.png',
-            "product" =>38
+            "product" =>35
         ]);
         ProductImages::create([
             'image' => '/fake/products/10pallete-2.png',
-            "product" =>38
+            "product" =>35
         ]);
         ProductImages::create([
             'image' => '/fake/products/10pallete-3.png',
-            "product" =>38
+            "product" =>35
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/dafran-1.png',
-            "product" =>39
+            "product" =>36
         ]);
         ProductImages::create([
             'image' => '/fake/products/dafran-2.png',
-            "product" =>39
+            "product" =>36
         ]);
         ProductImages::create([
             'image' => '/fake/products/dafran-3.png',
-            "product" =>39
+            "product" =>36
         ]);
         ProductImages::create([
             'image' => '/fake/products/dafran-4.png',
-            "product" =>39
+            "product" =>36
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/joueChat-1.png',
-            "product" =>40
+            "product" =>37
         ]);
         ProductImages::create([
             'image' => '/fake/products/joueChat-2.png',
-            "product" =>40
+            "product" =>37
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/pop-1.png',
-            "product" =>41
+            "product" =>38
         ]);
         ProductImages::create([
             'image' => '/fake/products/pop-2.png',
-            "product" =>41
+            "product" =>38
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/mainChat-1.png',
-            "product" =>42
+            "product" =>39
         ]);
         ProductImages::create([
             'image' => '/fake/products/mainChat-2.png',
-            "product" =>42
+            "product" =>39
         ]);
         ProductImages::create([
             'image' => '/fake/products/mainChat-3.png',
-            "product" =>42
+            "product" =>39
         ]);
         ProductImages::create([
             'image' => '/fake/products/mainChat-4.png',
-            "product" =>42
+            "product" =>39
         ]);
         ProductImages::create([
             'image' => '/fake/products/mainChat-5.png',
-            "product" =>42
+            "product" =>39
         ]);
         ProductImages::create([
             'image' => '/fake/products/mainChat-6.png',
-            "product" =>42
+            "product" =>39
         ]);
         ProductImages::create([
             'image' => '/fake/products/mainChat-7.png',
-            "product" =>42
+            "product" =>39
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/blablaJeu-1.png',
-            "product" =>43
+            "product" =>40
         ]);
         ProductImages::create([
             'image' => '/fake/products/blablaJeu-2.png',
-            "product" =>43
+            "product" =>40
         ]);
         ProductImages::create([
             'image' => '/fake/products/blablaJeu-3.png',
-            "product" =>43
+            "product" =>40
         ]);
         ProductImages::create([
             'image' => '/fake/products/blablaJeu-4.png',
-            "product" =>43
+            "product" =>40
         ]);
         ProductImages::create([
             'image' => '/fake/products/blablaJeu-5.png',
-            "product" =>43
+            "product" =>40
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/books-1.png',
-            "product" =>44
+            "product" =>41
         ]);
         ProductImages::create([
             'image' => '/fake/products/books-2.png',
-            "product" =>44
+            "product" =>41
         ]);
         ProductImages::create([
             'image' => '/fake/products/books-3.png',
-            "product" =>44
+            "product" =>41
         ]);
         ProductImages::create([
             'image' => '/fake/products/books-4.png',
-            "product" =>44
+            "product" =>41
         ]);
         ProductImages::create([
             'image' => '/fake/products/books-5.png',
-            "product" =>44
+            "product" =>41
         ]);
         ProductImages::create([
             'image' => '/fake/products/books-6.png',
-            "product" =>44
+            "product" =>41
         ]);
         ProductImages::create([
             'image' => '/fake/products/books-7.png',
-            "product" =>44
+            "product" =>41
         ]);
         ProductImages::create([
             'image' => '/fake/products/books-8.png',
-            "product" =>44
+            "product" =>41
         ]);
 
 
         ProductImages::create([
             'image' => '/fake/products/stocklivre-1.png',
-            "product" =>45
+            "product" =>42
         ]);
         ProductImages::create([
             'image' => '/fake/products/stocklivre-2.png',
-            "product" =>45
+            "product" =>42
         ]);
         ProductImages::create([
             'image' => '/fake/products/stocklivre-3.png',
-            "product" =>45
+            "product" =>42
         ]);
         ProductImages::create([
             'image' => '/fake/products/stocklivre-4.png',
-            "product" =>45
+            "product" =>42
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/watch-1.png',
-            "product" =>46
+            "product" =>43
         ]);
         ProductImages::create([
             'image' => '/fake/products/watch-2.png',
-            "product" =>46
+            "product" =>43
         ]);
         ProductImages::create([
             'image' => '/fake/products/watch-3.png',
-            "product" =>46
+            "product" =>43
         ]);
         ProductImages::create([
             'image' => '/fake/products/watch-4.png',
-            "product" =>46
+            "product" =>43
         ]);
         ProductImages::create([
             'image' => '/fake/products/watch-5.png',
-            "product" =>46
+            "product" =>43
         ]);
         ProductImages::create([
             'image' => '/fake/products/watch-6.png',
-            "product" =>46
+            "product" =>43
         ]);
         ProductImages::create([
             'image' => '/fake/products/watch-7.png',
-            "product" =>46
+            "product" =>43
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/clavierSouris-1.png',
-            "product" =>47
+            "product" =>44
         ]);
         ProductImages::create([
             'image' => '/fake/products/clavierSouris-2.png',
-            "product" =>47
+            "product" =>44
         ]);
         ProductImages::create([
             'image' => '/fake/products/clavierSouris-3.png',
-            "product" =>47
+            "product" =>44
         ]);
         ProductImages::create([
             'image' => '/fake/products/clavierSouris-4.png',
-            "product" =>47
+            "product" =>44
         ]);
         ProductImages::create([
             'image' => '/fake/products/clavierSouris-5.png',
-            "product" =>47
+            "product" =>44
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/mizan-1.png',
-            "product" =>48
+            "product" =>45
         ]);
         ProductImages::create([
             'image' => '/fake/products/mizan-2.png',
-            "product" =>48
+            "product" =>45
         ]);
         ProductImages::create([
             'image' => '/fake/products/mizan-3.png',
-            "product" =>48
+            "product" =>45
         ]);
         ProductImages::create([
             'image' => '/fake/products/mizan-4.png',
-            "product" =>48
+            "product" =>45
         ]);
         ProductImages::create([
             'image' => '/fake/products/mizan-5.png',
-            "product" =>48
+            "product" =>45
         ]);
 
 
 
         ProductImages::create([
             'image' => '/fake/products/chardIphone-1.png',
-            "product" =>49
+            "product" =>46
         ]);
         ProductImages::create([
             'image' => '/fake/products/chardIphone-2.png',
-            "product" =>49
+            "product" =>46
         ]);
         ProductImages::create([
             'image' => '/fake/products/chardIphone-3.png',
-            "product" =>49
+            "product" =>46
         ]);
         ProductImages::create([
             'image' => '/fake/products/chardIphone-4.png',
-            "product" =>49
+            "product" =>46
         ]);
         ProductImages::create([
             'image' => '/fake/products/chardIphone-5.png',
-            "product" =>49
+            "product" =>46
         ]);
     }
 }
