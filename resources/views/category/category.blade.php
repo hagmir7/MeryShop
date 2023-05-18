@@ -27,17 +27,17 @@
                         <h4 class="mr-1 mb-0">{{ $product->price }} MAD</h4> 
                         <del class="strike-text">{{$product->old_price}} MAD</del>
                     </div>
-                    <h6 class="text-success">Free shipping</h6>
+                    <h6 class="text-success">Livraison gratuite</h6>
                     <div class="d-flex flex-column mt-4">
-                        <a href="{{ route('product', $product->id ) }}" class="btn btn-primary btn-sm" type="button">Details</a>
-                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button>
+                        <a href="{{ route('product', $product->id ) }}" class="btn btn-primary btn-sm" type="button">Détails</a>
+                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">Ajouter à la liste de souhaits</button>
                     </div>
                 </div>
             </div>
             @endforeach
             @if (count($products) < 1)
             <div class="my-4">
-                <h3 class="text-center">No Products</h3>
+                <h3 class="text-center">Aucun produit</h3>
             </div>
             @endif
         </div>

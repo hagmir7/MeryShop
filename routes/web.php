@@ -44,6 +44,9 @@ Route::get('/', function () {
 
 
 
+
+
+
 Route::prefix('/product')->group(function () {
     Route::get('create', [ProductController::class, 'create'])->name('product.create');
     Route::post('store', [ProductController::class, 'store'])->name('product.store');

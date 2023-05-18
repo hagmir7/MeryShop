@@ -35,8 +35,8 @@
    
 
     <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Clothing and Fashion </h5></div>
-        <div class="mt-3"><a href="/category/1">See More <i class="bi bi-arrow-right"></i></a></div>
+        <div><h5 class="mt-3 mb-0">Vêtements et Mode</h5></div>
+        <div class="mt-3"><a href="/category/1">Voir plus <i class="bi bi-arrow-right"></i></a></div>
     </div>
     <div class="row">
         @foreach ($clothing as $product)
@@ -67,8 +67,8 @@
 
 <div class="container p-0">
     <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Electronics and Gadgets</h5></div>
-        <div class="mt-3"><a href="/category/2">See More <i class="bi bi-arrow-right"></i></a></div>
+        <div><h5 class="mt-3 mb-0">Électronique et Outillage</h5></div>
+        <div class="mt-3"><a href="/category/2">Voir plus <i class="bi bi-arrow-right"></i></a></div>
     </div>
     <div class="row py-2">
         @foreach ($electronics as $product)
@@ -83,7 +83,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -93,8 +93,8 @@
 
 <div class="container p-0">
     <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Home and Garden</h5></div>
-        <div class="mt-3"><a href="/category/3">See More <i class="bi bi-arrow-right"></i></a></div>
+        <div><h5 class="mt-3 mb-0">Maison et Jardin</h5></div>
+        <div class="mt-3"><a href="/category/3">Voir plus <i class="bi bi-arrow-right"></i></a></div>
     </div>
     <div class="row py-2">
         @foreach ($Home as $product)
@@ -109,7 +109,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -119,8 +119,8 @@
 
 <div class="container p-0">
     <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Health and Beauty</h5></div>
-        <div class="mt-3"><a href="/category/4">See More <i class="bi bi-arrow-right"></i></a></div>
+        <div><h5 class="mt-3 mb-0">Santé et Beauté</h5></div>
+        <div class="mt-3"><a href="/category/4">Voir plus <i class="bi bi-arrow-right"></i></a></div>
     </div>
     <div class="row py-2">
         @foreach ($Health as $product)
@@ -135,7 +135,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -146,8 +146,8 @@
 
 <div class="container p-0">
     <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Sports and Fitness</h5></div>
-        <div class="mt-3"><a href="/category/5">See More <i class="bi bi-arrow-right"></i></a></div>
+        <div><h5 class="mt-3 mb-0">Sports et Remise en Forme</h5></div>
+        <div class="mt-3"><a href="/category/5">Voir plus <i class="bi bi-arrow-right"></i></a></div>
     </div>
     <div class="row py-2">
         @foreach ($Sports as $product)
@@ -162,7 +162,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -172,8 +172,8 @@
 
 <div class="container p-0">
     <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Toys and Games</h5></div>
-        <div class="mt-3"><a href="/category/6">See More <i class="bi bi-arrow-right"></i></a></div>
+        <div><h5 class="mt-3 mb-0">jouets et Games</h5></div>
+        <div class="mt-3"><a href="/category/6">Voir plus <i class="bi bi-arrow-right"></i></a></div>
     </div>
     <div class="row py-2">
         @foreach ($Toys as $product)
@@ -188,7 +188,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -198,8 +198,8 @@
 
 <div class="container p-0">
     <div class="d-flex justify-content-between">
-        <div><h5 class="mt-3 mb-0">Books and Media</h5></div>
-        <div class="mt-3"><a href="/category/7">See More <i class="bi bi-arrow-right"></i></a></div>
+        <div><h5 class="mt-3 mb-0">Livres et Médias</h5></div>
+        <div class="mt-3"><a href="/category/7">Voir plus <i class="bi bi-arrow-right"></i></a></div>
     </div>
     <div class="row py-2">
         @foreach ($Books as $product)
@@ -214,7 +214,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 

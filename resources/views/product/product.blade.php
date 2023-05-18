@@ -39,7 +39,7 @@
         @endif
 
         @if ($product->colors)
-        <h6 class="mb-2">Colors</h6>
+        <h6 class="mb-2">Couleurs</h6>
         <div class="d-flex flex-wrop">
             @foreach ($product->colors as $color)
                 <div class="py-3 me-1 rounded px-3 border" style="background-color: {{ $color->code}}"></div>
@@ -49,7 +49,7 @@
         @endif
 
         @if ($product->sizes)
-        <h6 class="mb-2">Sizes</h6>
+        <h6 class="mb-2">Tailles</h6>
         <div class="d-flex flex-wrap">
             @foreach ($product->sizes as $size)
             <div class="py-2 me-1 rounded px-3 border mb-1">{{ $size->size}}</div>
@@ -59,8 +59,8 @@
 
         <p class="lead fs-6 my-4">{{ $product->description }}</p>
         <div class="mt-2">
-            <button class="btn btn-primary w-100">Pay Now</button>
-            <button class="btn btn-warning mt-2 w-100" data-bs-toggle="modal" data-bs-target="#addToCart">Add to cart</button>
+            <button class="btn btn-primary w-100">Payez maintenant</button>
+            <button class="btn btn-warning mt-2 w-100" data-bs-toggle="modal" data-bs-target="#addToCart">Ajouter au panier</button>
           </div>
       </div>
 
@@ -71,18 +71,18 @@
 </div>
 
   
-  {{-- <!-- Add to cart modal -->
+ <!-- Add to cart modal -->
   <div class="modal" id="addToCart" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addToCartLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="addToCartLabel">Add To Cart</h1>
+          <h1 class="modal-title fs-5" id="addToCartLabel">Ajouter au panier</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="form-check">
         @if ($product->colors)
-            <h6 class="mb-2">Select colors</h6>
+            <h6 class="mb-2">Choisir les couleurs</h6>
             <div class="d-flex flex-wrop">
                 @foreach ($product->colors as $color)
                 <div>
@@ -96,7 +96,7 @@
         @endif
 
         @if ($product->sizes)
-        <h6 class="mb-2">Select sizes</h6>
+        <h6 class="mb-2">Sélectionnez les tailles</h6>
         <div class="d-flex flex-wrap">
             @foreach ($product->sizes as $size)
             <div class="py-2 me-1 rounded px-2 border mb-1">{{ $size->size}}</div>
@@ -106,11 +106,11 @@
     </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add to cart</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <button type="button" class="btn btn-primary">Ajouter au panier</button>
         </div>
       </div>
     </div>
-  </div>  --}}
+  </div>
 <!-- About End -->
 @endsection
