@@ -259,7 +259,7 @@ class ProductSeeder extends Seeder
                 'category' => 5
             ],
 
-            //22
+            //21
             [
                 'name' => "cover table",
                 'price' => 134,
@@ -270,6 +270,7 @@ class ProductSeeder extends Seeder
                 'user'=>1,
                 'category' => 3
             ],
+            //22
             [
                 'name' => "MAISON ARTS Chaise de jardin",
                 'price' => 1034,
@@ -339,7 +340,7 @@ class ProductSeeder extends Seeder
 
 
 
-            //31
+            //28
             [
                 'name' => "nettoyage en profondeur , hydratant charbon Masque de protection Masque de protection",
                 'price' => 67,
@@ -352,7 +353,7 @@ class ProductSeeder extends Seeder
             ],
 
 
-            //32
+            //29
             [
                 'name' => "50 pièces /set portable jetable Savon minimaliste Savon Drap de lit parfumé petit pour domicile et voyage",
                 'price' => 63,
@@ -364,7 +365,7 @@ class ProductSeeder extends Seeder
                 'category' => 4
             ],
 
-            //33
+            //30
             [
                 'name' => "longue tenue hydratant (sans transfert) mat Brillant à lèvres - Coupe",
                 'price' => 544,
@@ -388,7 +389,7 @@ class ProductSeeder extends Seeder
                 'category' => 4
             ],
 
-            //35
+            //31
             [
                 'name' => "4 pièces Coloration capillaire Brosse & Bol & jetable Gant Ensemble",
                 'price' => 106,
@@ -400,7 +401,7 @@ class ProductSeeder extends Seeder
                 'category' => 4
             ],
 
-            //36
+            //32
             [
                 'name' => "4 pièces Coloration capillaire Brosse & Bol & jetable Gant Ensemble",
                 'price' => 66,
@@ -413,7 +414,7 @@ class ProductSeeder extends Seeder
             ],
 
 
-            //37
+            //33
             [
                 'name' => "Palette de fard à paupières (sans transfert) éclaircissant pigmenté",
                 'price' => 1036,
@@ -425,7 +426,7 @@ class ProductSeeder extends Seeder
                 'category' => 4
             ],
 
-            //38
+            //34
             [
                 'name' => "10 pièces Set de pinceaux à maquillage",
                 'price' => 1036,
@@ -436,7 +437,7 @@ class ProductSeeder extends Seeder
                 'user'=>1,
                 'category' => 4
             ],
-            //39
+            //35
             [
                 'name' => "24 pièces Faux ongles long amande à rayures & 1 feuille ruban adhésif & 1 pièce lime à ongles",
                 'price' => 54,
@@ -449,7 +450,7 @@ class ProductSeeder extends Seeder
             ],
 
 
-            //40
+            //36
             [
                 'name' => "1 pièce Jouet teaser pour chat ressort design à détail d'abeille aléatoire pour chat pour jouer",
                 'price' => 54,
@@ -461,7 +462,7 @@ class ProductSeeder extends Seeder
                 'category' => 6
             ],
 
-            //41
+            //37
             [
                 'name' => "1 pièce Jouet bulle pop chat pour chat pour",
                 'price' => 98,
@@ -473,7 +474,7 @@ class ProductSeeder extends Seeder
                 'category' => 6
             ],
 
-            //42
+            //38
             [
                 'name' => "1 pièce Jouet teaser pour chat dessin animé design main aléatoire",
                 'price' => 36,
@@ -485,7 +486,7 @@ class ProductSeeder extends Seeder
                 'category' => 6
             ],
 
-            //43
+            //39
             [
                 'name' => "1 pièce Jouet teaser pour chat design cactus pour chat pour jouer",
                 'price' => 100,
@@ -498,7 +499,7 @@ class ProductSeeder extends Seeder
             ],
 
 
-            //44
+            //40
             [
                 'name' => "1 pièce créatif multifonctionnel Bijou design livre Boîte de rangement de bijoux pour domicile",
                 'price' => 883,
@@ -510,7 +511,7 @@ class ProductSeeder extends Seeder
                 'category' => 7
             ],
 
-            //45
+            //41
             [
                 'name' => "1 pièce transparent décoratif simple à usages multiples bureau Serre-livres pour Livre stockage",
                 'price' => 599,
@@ -524,7 +525,7 @@ class ProductSeeder extends Seeder
 
 
 
-           //46
+           //42
             [
                 'name' => "1 pièce Montre intelligente surveillance de la fréquence cardiaque carré & 1 pièce Bracelet de montre",
                 'price' => 691,
@@ -536,7 +537,7 @@ class ProductSeeder extends Seeder
                 'category' => 2
             ],
 
-           //47
+           //43
             [
                 'name' => "clavier et souris sans fil",
                 'price' => 521,
@@ -549,7 +550,7 @@ class ProductSeeder extends Seeder
             ],
 
 
-           //48
+           //44
             [
                 'name' => "Balance Electronique Page Profi Noir 15 Kg / 1 g",
                 'price' => 691,
@@ -561,7 +562,7 @@ class ProductSeeder extends Seeder
                 'category' => 2
             ],
 
-           //49
+           //45
             [
                 'name' => " iPhone Charger",
                 'price' => 126,

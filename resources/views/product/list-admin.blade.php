@@ -12,7 +12,7 @@
     <table id="mytable" class="table table-bordred table-striped">
         <h4>Products ({{ $products->count() }})</h4>
         <div class="d-flex justify-content-between">
-            <p><a class="btn btn-outline-success btn-sm" href="{{ route('product.create') }}">+ Create Product</a></p>
+            <p><a class="btn btn-outline-success btn-sm" href="{{ route('product.create') }}">+ Créer un produit</a></p>
             <p><input type="search" class="form-control form-control-sm border" placeholder="Search"></p>
         </div>
         <thead>
@@ -34,7 +34,7 @@
                 <td>{{ $product->price }} MAD</td>
                 <td>
                     <a href="{{ route('product.update', $product->id) }}" class="btn btn-primary btn-sm btn-xs"><i class="bi bi-pen"></i></a>
-                    <a href="{{ route('product.delete', $product->id) }}" onclick="return confirm('Are you sur you want to delete Product?')" class="btn btn-danger btn-sm btn-xs"> <i class="bi bi-trash"></i> </a>
+                    <a href="{{ route('product.delete', $product->id) }}" onclick="return confirm('Voulez-vous vraiment supprimer ce produit ?')" class="btn btn-danger btn-sm btn-xs"> <i class="bi bi-trash"></i> </a>
                 </td>
             </tr>
             @endforeach

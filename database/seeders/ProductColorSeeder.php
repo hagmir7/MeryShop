@@ -125,14 +125,14 @@ class ProductColorSeeder extends Seeder
         ]);
 
 
-        ProductColor::create([
-            'product_id' => 44,
-            "color_id" =>6
-        ]);
-        ProductColor::create([
-            'product_id' => 44,
-            "color_id" =>2
-        ]);
+        // ProductColor::create([
+        //     'product_id' => 44,
+        //     "color_id" =>6
+        // ]);
+        // ProductColor::create([
+        //     'product_id' => 44,
+        //     "color_id" =>2
+        // ]);
 
     }
 }

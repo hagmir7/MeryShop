@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row g-5 align-items-center d-flex justify-content-center">
             <div class="col-12" data-wow-delay="0.1s">
-                <h1 class="h3">Create New Product</h1>
+                <h1 class="h3">Créer un nouveau produit</h1>
                 @if ($errors->any())
 
                 @foreach ($errors->all() as $error)
@@ -20,25 +20,25 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" value="{{@old('name')}}" class="form-control mb-2" placeholder="Product name...">
+                            <label for="name">Nom de produit</label>
+                            <input type="text" name="name" value="{{@old('name')}}" class="form-control mb-2" placeholder="Nom du produit...">
                             @error('name') <span class="text-danger">{{$message}}</span> <br>@enderror
         
-                            <label for="price">Price</label>
-                            <input type="text" name="price" value="{{@old('price')}}" class="form-control mb-2" placeholder="Product price">
+                            <label for="price">Prix</label>
+                            <input type="text" name="price" value="{{@old('price')}}" class="form-control mb-2" placeholder="Prix ​​du produit">
                             @error('price') <span class="text-danger">{{$message}}</span> <br>@enderror
         
-                            <label for="old_price">Old Price</label>
+                            <label for="old_price">Ancien prix</label>
                             <input type="number" name="old_price" value="{{@old('old_price')}}" class="form-control mb-2">
                             @error('old_price') <span class="text-danger">{{$message}}</span> <br>@enderror
         
-                            <label for="stock">Quantity in Stock</label>
+                            <label for="stock">la quantité en stock</label>
                             <input type="number" name="stock" value="{{@old('stock')}}" class="form-control mb-2">
                             @error('stock') <span class="text-danger">{{$message}}</span> <br>@enderror
 
-                            <label for="name">Category</label>
+                            <label for="name">Catégorie</label>
                             <select name="category" class="form-select mb-2">
-                                <option value="">Select Category</option>
+                                <option value="">Sélectionnez la catégorie</option>
                                 @foreach ($category as $caty)
                                 <option value="{{ $caty->id }}">{{ $caty->name }}</option>
                                 @endforeach
@@ -53,7 +53,7 @@
                         </div>
     
                         <div class="col-md-6">
-                            <label for="color">Select Colors</label>
+                            <label for="color">Choisir les couleurs</label>
                             <select name="color[]" class="form-select mb-2" multiple>
                                 @foreach ($colors as $color)
                                 <option value="{{ $color->id }}">{{ $color->name }}</option>
@@ -61,7 +61,7 @@
                             </select>
                             @error('color') <span class="text-danger">{{$message}}</span> <br>@enderror
         
-                            <label for="size">Select Sizes</label>
+                            <label for="size">Sélectionnez les tailles</label>
                             <select name="size[]" class="form-select mb-2" multiple>
                                 @foreach ($sizes as $size)
                                 <option value="{{ $size->id }}">{{ $size->size }}</option>
