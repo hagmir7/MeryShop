@@ -34,6 +34,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
+     <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/assets2/images/logo/favicon.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets2/css/style-prefix.css">
+
+  <!--
+    - google font link
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+
 </head>
 
 
@@ -53,40 +70,200 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5 border-bottom">
-        <a href="/" class="navbar-brand d-flex align-items-center">
-            <h2 class="m-0 text-primary"><img class="img-fluid me-2" src="/assets/img/icon-1.png" alt=""
-                    style="width: 45px;"></h2>
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-4 py-lg-0">
-                <a href="/" class="nav-item nav-link active">Home</a>
-                <a href="/product/list" class="nav-item nav-link">Products</a>
-                <a href="/category/list" class="nav-item nav-link">Categories</a>
-                <a href="/contact" class="nav-item nav-link">Contact Us</a>
-            </div>
-            @auth
-            <div class="d-flex">
-                <a class="btn btn-square rounded-circle me-1" href="https://www.twitter.com/meryshop" target="_blank"><i class="fab fa-bag"></i></a>
-                <a class="btn btn-square rounded-circle me-1" href="https://www.facebook.com/meryshop" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle me-1" href="https://www.youtube.com/meryshop" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/meryshop" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            @endauth
 
-            @unless (Auth::check())
-            <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a href="{{ route('register') }}" class="btn btn-primary mx-1">Register</a>
-                <a href="{{ route('login') }}" class="btn btn-outline-primary mx-1">Login</a>
-            </div> 
-            @endunless
 
+    <div class="overlay" data-overlay></div>
+  
+    <!--
+      - HEADER
+    -->
+  
+    <header>
+
+
+        <div class="header-main navbar navbar-expand-lg bg-white navbar-light sticky-top p-10 px-4 px-lg-5 border-bottom">
+  
+            <div class="container">
+      
+              <a href="#" class="header-logo">
+                <img src="/assets2/images/logo/logo.svg" alt="Anon's logo" width="120" height="36">
+              </a>
+      
+              <div class="header-search-container">
+      
+                <input type="search" name="search" class="search-field" placeholder="Entrez le nom de votre produit...">
+      
+                <button class="search-btn">
+                  <ion-icon name="search-outline" class="color-primary"></ion-icon>
+                </button>
+      
+              </div>
+      
+              <div class="header-top-actions">
+  
+                <select name="currency">
+      
+                  <option value="usd">USD &dollar;</option>
+                  <option value="eur">EUR &euro;</option>
+      
+                </select>
+      
+                <select name="language">
+      
+                  <option value="en-US">English</option>
+                  <option value="es-ES">Espa&ntilde;ol</option>
+                  <option value="fr">Fran&ccedil;ais</option>
+      
+                </select>
+      
+              </div>
+      
+            </div>
+      
+          </div>
+
+
+  
+      <div class="header-top bg-white navbar-light sticky-top p-0 px-4 px-lg-5 ">
+  
+        <div class="container">
+  
+          <ul class="header-social-container">
+  
+            <li>
+              <a href="https://www.facebook.com/meryshop" class="social-link" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+  
+            <li>
+              <a href="https://www.twitter.com/meryshop" class="social-link" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+  
+            <li>
+              <a href="https://www.instagram.com/meryshop" class="social-link" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+  
+            <li>
+              <a href="https://www.linkedin.com/meryshop" class="social-link" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+  
+          </ul>
+          <nav class="desktop-navigation-menu ">
+  
+            <div class="container">
+      
+              <ul class="desktop-menu-category-list">
+      
+                <li class="menu-category">
+                  <a href="/" class="menu-title nav-item nav-link active">accueille</a>
+                </li>
+                <li class="menu-category">
+                  <a href="/product/list" class="menu-title nav-item nav-link active">Produit</a>
+                </li>
+      
+                <li class="menu-category">
+                  <a href="/category/list" class="menu-title">Catégories</a>
+      
+                  <ul class="dropdown-list" style="width:auto;">
+      
+                    <li class="dropdown-item">
+                      <a href="#">Clothing and Fashion</a>
+                    </li>
+      
+                    <li class="dropdown-item">
+                      <a href="#">Electronics and Gadgets</a>
+                    </li>
+      
+                    <li class="dropdown-item">
+                      <a href="#">Home and Garden</a>
+                    </li>
+      
+                    <li class="dropdown-item">
+                      <a href="#">Health and Beauty</a>
+                    </li>
+      
+                    <li class="dropdown-item">
+                      <a href="#">Sports and Fitness</a>
+                    </li>
+      
+                    <li class="dropdown-item">
+                      <a href="#">Toys and Games</a>
+                    </li>
+      
+                    <li class="dropdown-item">
+                      <a href="#">Books and Media</a>
+                    </li>
+    
+    
+                  </ul>
+                                  
+                  <li class="menu-category">
+                    <a href="/contact" class="menu-title nav-item nav-link active">Contactez-nous</a>
+                  </li>
+                </li>
+      
+              </ul>
+      
+            </div>
+      
+          </nav>
+  
+
+
+          <div class="header-user-actions">
+            <button class="action-btn">
+          
+                <ul class="desktop-menu-category-list">
+                    <li class="menu-category">
+                            <ion-icon name="person-outline" style="margin-top:20px;"></ion-icon>
+                   
+                            @unless (Auth::check())
+                                <ul class="dropdown-list" style="width:auto; ">
+                                    <li class="dropdown-item">
+                                        <a href="{{ route('register') }}" class="btn mx-1">s'inscrire</a>
+                                    </li>
+    
+                                    <li class="dropdown-item">
+                                        <a href="{{ route('login') }}" class="btn mx-1">se connecter</a>
+                                    </li>
+                                </ul>
+                            @endunless
+                    </li>
+             
+                </ul>
+
+                  
+  
+                </button>
+            <button class="action-btn">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span class="count">0</span>
+            </button>
+  
+            <button class="action-btn">
+              <ion-icon name="bag-handle-outline"></ion-icon>
+              <span class="count">0</span>
+            </button>
+  
+          </div>
+  
         </div>
-    </nav>
+  
+      </div>
+  
+
+  
+
+  
+    </header>
+  
     <!-- Navbar End -->
 
 
@@ -106,8 +283,8 @@
                         et lorem et sit.</span>
                 </div>
                 <div class="col-md-6">
-                    <h5 class="mb-4">Offers News</h5>
-                    <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita.</p>
+                    <h5 class="mb-4">Offres Actualités</h5>
+                    <p>LIVRAISON GRATUITE CETTE SEMAINE COMMANDE SUPÉRIEURE - 55 $.</p>
                     <div class="position-relative">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -173,6 +350,16 @@
 
     <!-- Template Javascript -->
     <script src="/assets/js/main.js"></script>
+
+
+
+    <script src="/assets2/js/script.js"></script>
+
+    <!--
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
     @if(session()->has('message'))

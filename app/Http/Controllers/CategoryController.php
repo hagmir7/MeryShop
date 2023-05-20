@@ -43,7 +43,7 @@ class CategoryController extends Controller
             'image' => $url
         ]);
 
-        return redirect()->route('category.list.admin')->with(['message' => "Category Created successfully."]);
+        return redirect()->route('category.list.admin')->with(['message' => "Catégorie créée avec succès."]);
     }
 
 

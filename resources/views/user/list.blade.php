@@ -32,7 +32,7 @@
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->first_name }} {{ $user->last_name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->role->name }}</td>
+                <td>{{ $user->role}}</td>
                 <td>
                     <a href="{{ route('user.delete', $user->id) }}" onclick="return confirm('Are you sur you want to delete user?')" class="btn btn-danger btn-sm btn-xs"> <i class="bi bi-trash"></i> </a>
                 </td>
