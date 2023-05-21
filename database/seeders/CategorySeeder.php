@@ -13,13 +13,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create(["name" => "Clothing and Fashion", "image" => '/product/image-1.png']);
-        Category::create(["name" => "Electronics and Gadgets", "image" => '/product/image-2.png']);
-        Category::create(["name" => "Home and Garden", "image" => '/product/image-3.png']);
-        Category::create(["name" => "Health and Beauty", "image" => '/product/image-4.png']);
-        Category::create(["name" => "Sports and Fitness", "image" => '/product/image-5.png']);
-        Category::create(["name" => "Toys and Games", "image" => '/product/image-6.png']);
-        Category::create(["name" => "Books and Media", "image" => '/product/image-7.png']);
+        Category::create(["name" => "Vêtements et Mode", "image" => '/fake/products/vetementCat.webp']);
+        Category::create(["name" => "Électronique et Outillage", "image" => '/fake/products/EleCate.gif']);
+        Category::create(["name" => "Maison et Jardin", "image" => '/fake/products/maisonCat.gif']);
+        Category::create(["name" => "Santé et Beauté", "image" =>'/fake/products/beauteCat.gif']);
+        Category::create(["name" => "Sports et Remise en Forme", "image" =>'/fake/products/sportCat.gif']);
+        Category::create(["name" => "jouets et Games", "image" => '/fake/products/jouCat.gif']);
+        Category::create(["name" => "Livres et Médias", "image" => '/fake/products/livreCat.gif']);
 
     }
 }
