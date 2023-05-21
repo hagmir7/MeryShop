@@ -83,6 +83,9 @@ Route::prefix('/user')->group(function(){
     Route::post('login-store', [UserController::class, 'loginStore'])->name('login.store');
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
     Route::get('delete/{user}', [UserController::class, 'delete'])->name('user.delete')->middleware('auth');
+    Route::get('{user}', [UserController::class, 'show'])->name('user.show')->middleware('auth');
+    Route::get('update/{user}', [UserController::class, 'update'])->name('user.update')->middleware('auth');
+    Route::put('update/store/{user}', [UserController::class, 'updateStore'])->name('user.update.store')->middleware('auth');
 });
 
 
