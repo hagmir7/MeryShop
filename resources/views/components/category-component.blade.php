@@ -1,10 +1,12 @@
 @foreach ($categories as $category)
-<div class="col-6 col-lg-2 p-1 mt-2">
-    <div class="card border-0 shadow-sm rounded">
-        <div class="image-content">
-            <img src="{{ $category->image }}" width="100%" class="cover" alt="{{ $category->name }}">
-        </div>
-        <div class="p-2 border-top">
+<div class="col-sm-3 mb-3">
+    <div class="thumb-wrapper wow fadeInUp">
+        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+            <div class="img-box">
+                <img src="{{ $category->image }}" width="100%" class="cover" alt="{{ $category->name }}">
+            </div>
+        </a>
+        <div class="thumb-content">
             <h6>{{ $category->name }}</h6>
             <a href="{{ route("category", $category->id) }}" class="btn btn-outline-primary rounded-pill w-100">View Products</a>
         </div>
