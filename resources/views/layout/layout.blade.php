@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Mery Shop - Free Cryptocurrency Website Template</title>
+    <title>Mery Shop</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -37,7 +37,7 @@
      <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="/assets2/images/logo/favicon.ico" type="image/x-icon">
+  {{-- <link rel="shortcut icon" href="/assets2/images/logo/favicon.ico" type="image/x-icon"> --}}
 
   <!--
     - custom css link
@@ -57,7 +57,7 @@
 
 <style>
     .card iframe{width: 100%};
-    
+
 </style>
 
 
@@ -73,197 +73,197 @@
 
 
     <div class="overlay" data-overlay></div>
-  
+
     <!--
       - HEADER
     -->
-  
+
     <header>
 
 
         <div class="header-main navbar navbar-expand-lg bg-white navbar-light sticky-top p-10 px-4 px-lg-5 border-bottom">
-  
+
             <div class="container">
-      
+
               <a href="#" class="header-logo">
                 <img src="/assets2/images/logo/logo.svg" alt="Anon's logo" width="120" height="36">
               </a>
-      
+
               <div class="header-search-container">
-      
+
                 <input type="search" name="search" class="search-field" placeholder="Entrez le nom de votre produit...">
-      
+
                 <button class="search-btn">
                   <ion-icon name="search-outline" class="color-primary"></ion-icon>
                 </button>
-      
+
               </div>
-      
+
               <div class="header-top-actions">
-  
+
                 <select name="currency">
-      
+
                   <option value="usd">USD &dollar;</option>
                   <option value="eur">EUR &euro;</option>
-      
+
                 </select>
-      
+
                 <select name="language">
-      
+
                   <option value="en-US">English</option>
                   <option value="es-ES">Espa&ntilde;ol</option>
                   <option value="fr">Fran&ccedil;ais</option>
-      
+
                 </select>
-      
+
               </div>
-      
+
             </div>
-      
+
           </div>
 
 
-  
+
       <div class="header-top bg-white navbar-light sticky-top p-0 px-4 px-lg-5 ">
-  
+
         <div class="container">
-  
+
           <ul class="header-social-container">
-  
+
             <li>
               <a href="https://www.facebook.com/meryshop" class="social-link" target="_blank">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
-  
+
             <li>
               <a href="https://www.twitter.com/meryshop" class="social-link" target="_blank">
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li>
-  
+
             <li>
               <a href="https://www.instagram.com/meryshop" class="social-link" target="_blank">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
-  
+
             <li>
               <a href="https://www.linkedin.com/meryshop" class="social-link" target="_blank">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
-  
+
           </ul>
           <nav class="desktop-navigation-menu ">
-  
+
             <div class="container">
-      
+
               <ul class="desktop-menu-category-list">
-      
+
                 <li class="menu-category">
-                  <a href="/" class="menu-title nav-item nav-link active">accueille</a>
+                  <a href="/" class="menu-title nav-item nav-link active">accueil</a>
                 </li>
                 <li class="menu-category">
                   <a href="/product/list" class="menu-title nav-item nav-link active">Produit</a>
                 </li>
-      
+
                 <li class="menu-category">
                   <a href="/category/list" class="menu-title">Catégories</a>
-      
+
                   <ul class="dropdown-list" style="width:auto;">
-      
+
                     <li class="dropdown-item">
                       <a href="#">Clothing and Fashion</a>
                     </li>
-      
+
                     <li class="dropdown-item">
                       <a href="#">Electronics and Gadgets</a>
                     </li>
-      
+
                     <li class="dropdown-item">
                       <a href="#">Home and Garden</a>
                     </li>
-      
+
                     <li class="dropdown-item">
                       <a href="#">Health and Beauty</a>
                     </li>
-      
+
                     <li class="dropdown-item">
                       <a href="#">Sports and Fitness</a>
                     </li>
-      
+
                     <li class="dropdown-item">
                       <a href="#">Toys and Games</a>
                     </li>
-      
+
                     <li class="dropdown-item">
                       <a href="#">Books and Media</a>
                     </li>
-    
-    
+
+
                   </ul>
-                                  
+
                   <li class="menu-category">
                     <a href="/contact" class="menu-title nav-item nav-link active">Contactez-nous</a>
                   </li>
                 </li>
-      
+
               </ul>
-      
+
             </div>
-      
+
           </nav>
-  
+
 
 
           <div class="header-user-actions">
             <button class="action-btn">
-          
+
                 <ul class="desktop-menu-category-list">
                     <li class="menu-category">
                             <ion-icon name="person-outline" style="margin-top:20px;"></ion-icon>
-                   
+
                             @unless (Auth::check())
                                 <ul class="dropdown-list" style="width:auto; ">
                                     <li class="dropdown-item">
                                         <a href="{{ route('register') }}" class="btn mx-1">s'inscrire</a>
                                     </li>
-    
+
                                     <li class="dropdown-item">
                                         <a href="{{ route('login') }}" class="btn mx-1">se connecter</a>
                                     </li>
                                 </ul>
                             @endunless
                     </li>
-             
+
                 </ul>
 
-                  
-  
+
+
                 </button>
             <button class="action-btn">
               <ion-icon name="heart-outline"></ion-icon>
               <span class="count">0</span>
             </button>
-  
+
             <button class="action-btn">
               <ion-icon name="bag-handle-outline"></ion-icon>
               <span class="count">0</span>
             </button>
-  
+
           </div>
-  
+
         </div>
-  
+
       </div>
-  
 
-  
 
-  
+
+
+
     </header>
-  
+
     <!-- Navbar End -->
 
 

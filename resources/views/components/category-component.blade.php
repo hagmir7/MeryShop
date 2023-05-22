@@ -8,7 +8,7 @@
         </a>
         <div class="thumb-content">
             <h6>{{ $category->name }}</h6>
-            <a href="{{ route("category", $category->id) }}" class="btn btn-outline-primary rounded-pill w-100">View Products</a>
+            <a href="{{ route("category", $category->id) }}" class="btn btn-outline-primary rounded-pill w-100">Voir les produits</a>
         </div>
     </div>
 </div>
@@ -16,6 +16,6 @@
 <div class="col-12">
     {{ $categories->links('vendor.pagination.bootstrap-5')  }}
     @if (empty($categories))
-    <h3 class="text-center py-5">No Category</h3>
+    <h3 class="text-center py-5">Aucune catégorie</h3>
     @endif
 </div>
