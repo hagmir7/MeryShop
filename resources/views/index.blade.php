@@ -101,6 +101,7 @@
         @foreach ($electronics as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -111,6 +112,7 @@
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
                 </div>
+
             </div>
         </div>
         @endforeach
@@ -126,6 +128,7 @@
         @foreach ($Home as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -136,6 +139,7 @@
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
                     <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
                 </div>
+
             </div>
         </div>
         @endforeach
@@ -151,6 +155,7 @@
         @foreach ($Health as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -177,6 +182,7 @@
         @foreach ($Sports as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -187,6 +193,7 @@
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
                 </div>
+
             </div>
         </div>
         @endforeach
@@ -202,6 +209,7 @@
         @foreach ($Toys as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -227,6 +235,7 @@
         @foreach ($Books as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -245,9 +254,6 @@
                     @else
                     <button type="button" class="btn btn-outline-primary rounded-pill w-100">Ajouter au panier</button>
                     @endauth
-
-
-                </div>
             </div>
         </div>
         @endforeach
