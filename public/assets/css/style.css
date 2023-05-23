@@ -39,34 +39,6 @@ h6,
 }
 
 
-
-.cart-item {
-    border: 1px solid #e2e2e2;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.cart-item img {
-    max-width: 100px;
-    margin-right: 10px;
-}
-
-.cart-item-title {
-    font-weight: bold;
-}
-
-.cart-item-qty {
-    margin-right: 10px;
-}
-
-.cart-item-remove-btn {
-    margin-left: auto;
-}
-
-
 /*** Button ***/
 .btn {
     font-weight: 500;
