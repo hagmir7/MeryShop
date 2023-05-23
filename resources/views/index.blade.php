@@ -74,6 +74,7 @@
         @foreach ($electronics as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -82,7 +83,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -99,6 +100,7 @@
         @foreach ($Home as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -107,7 +109,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -124,6 +126,7 @@
         @foreach ($Health as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -132,7 +135,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -150,6 +153,7 @@
         @foreach ($Sports as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -158,7 +162,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -175,6 +179,7 @@
         @foreach ($Toys as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -183,7 +188,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 
@@ -200,6 +205,7 @@
         @foreach ($Books as $product)
         <div class="col-sm-3 mb-3">
             <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">
@@ -208,18 +214,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    
-                    @auth
-                        @if((count(\App\Models\CartDetail::where('product_id', $product->id )->where('cart_id', auth()->user()->cart->id )->get()) > 0))
-                            <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Retirer du panier</button>
-                        @else
-                            <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
-                        @endif
-                    @else
-                    <button type="button" class="btn btn-outline-primary rounded-pill w-100">Ajouter au panier</button>
-                    @endauth
-
-                    
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
                 </div>						
             </div>
         </div> 

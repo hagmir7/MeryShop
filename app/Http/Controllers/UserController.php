@@ -53,7 +53,7 @@ class UserController extends Controller
 
 
     public function login(){
-        if(Auth::check()){
+        if(Auth::user()){
             return redirect('dashboard');
         }else{
             return view("user/login");
