@@ -58,7 +58,6 @@
     width: 100%
   }
 
-  ;
 </style>
 
 
@@ -163,7 +162,7 @@
             <ul class="desktop-menu-category-list">
 
               <li class="menu-category">
-                <a href="/" class="menu-title nav-item nav-link active">accueille</a>
+                <a href="/" class="menu-title nav-item nav-link active">accueil</a>
               </li>
               <li class="menu-category">
                 <a href="/product/list" class="menu-title nav-item nav-link active">Produit</a>
@@ -194,15 +193,15 @@
 
 
 
-        <div class="header-user-actions">
-          <button class="action-btn">
+        <div class="header-user-actions" >
+          <button class="action-btn" >
 
-            <ul class="desktop-menu-category-list">
+            <ul class="desktop-menu-category-list" style="margin-left: -140px">
               <li class="menu-category fs-4">
                 <ion-icon name="person-outline" style="margin-top:20px;"></ion-icon>
 
-                @unless (Auth::check())
-                <ul class="dropdown-list" style="width:auto; ">
+            @unless (Auth::check())
+                <ul class="dropdown-list" style="width:160px; margin-left: -30px ">
                   <li class="dropdown-item">
                     <a href="{{ route('register') }}" class="btn mx-1">s'inscrire</a>
                   </li>
@@ -219,12 +218,12 @@
 
 
           </button>
-          <button class="action-btn fs-4">
+          <button class="action-btn fs-4" style="margin-left: -40px">
             <ion-icon name="heart-outline"></ion-icon>
             <span class="count">0</span>
           </button>
           @auth
-          <a href="/cart" class="action-btn fs-4">
+          <a href="/cart" class="action-btn fs-4" >
             <ion-icon name="bag-handle-outline"></ion-icon>
             <span class="count" id="cart-items">{{ auth()->user()->cart->items->count()}}</span>
           </a>

@@ -109,13 +109,8 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-<<<<<<< HEAD
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>
-=======
                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
-                </div>						
->>>>>>> 4e6f13d2b7a1b4d0a6750c48e69ce9e2d9c3e471
+                </div>
             </div>
         </div>
         @endforeach
@@ -139,13 +134,8 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-<<<<<<< HEAD
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>
-=======
                     <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
-                </div>						
->>>>>>> 4e6f13d2b7a1b4d0a6750c48e69ce9e2d9c3e471
+                </div>
             </div>
         </div>
         @endforeach
@@ -169,13 +159,8 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-<<<<<<< HEAD
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>
-=======
                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
-                </div>						
->>>>>>> 4e6f13d2b7a1b4d0a6750c48e69ce9e2d9c3e471
+                </div>
             </div>
         </div>
         @endforeach
@@ -200,13 +185,8 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-<<<<<<< HEAD
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>
-=======
                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
-                </div>						
->>>>>>> 4e6f13d2b7a1b4d0a6750c48e69ce9e2d9c3e471
+                </div>
             </div>
         </div>
         @endforeach
@@ -230,13 +210,8 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-<<<<<<< HEAD
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>
-=======
                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
-                </div>						
->>>>>>> 4e6f13d2b7a1b4d0a6750c48e69ce9e2d9c3e471
+                </div>
             </div>
         </div>
         @endforeach
@@ -260,11 +235,7 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-<<<<<<< HEAD
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>
-=======
-                    
+
                     @auth
                         @if((count(\App\Models\CartDetail::where('product_id', $product->id )->where('cart_id', auth()->user()->cart->id )->get()) > 0))
                             <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Retirer du panier</button>
@@ -275,9 +246,8 @@
                     <button type="button" class="btn btn-outline-primary rounded-pill w-100">Ajouter au panier</button>
                     @endauth
 
-                    
-                </div>						
->>>>>>> 4e6f13d2b7a1b4d0a6750c48e69ce9e2d9c3e471
+
+                </div>
             </div>
         </div>
         @endforeach
