@@ -21,7 +21,7 @@
     <!--<title>Dashboard Sidebar Menu</title>--> 
 </head>
 <body>
-    <nav class="sidebar close">
+    <nav class="sidebar border-end">
       
         <header>
             <div class="image-text">
