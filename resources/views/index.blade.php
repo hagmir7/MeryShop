@@ -2,37 +2,64 @@
 
 
 @section('content')
-<div class="container-fluid hero-header bg-light p-0 m-0">
+<div class="container-fluid hero-header p-0 m-0">
     <div class="container pt-3 p-0">
         <div class="row g-3 ">
-            <div id="carouselExampleSlidesOnly" class="carousel slide col-md-8 card p-0 overflow-hidden" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide col-md-8  p-0 overflow-hidden" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="/assets/img/Clothing.png" class="d-block w-100" alt="Clothing">
+                    <a href="/category/1"><img src="/assets/img/Clothing.png" class="d-block w-200" alt="Clothing"></a>
                   </div>
+
                   <div class="carousel-item">
-                    <img src="/assets/img/Electronic.png" class="d-block w-100" alt="...">
+                    <a href="/category/2"><img src="/assets/img/Electronic.png" class="d-block w-200" alt="..."></a>
                   </div>
+
+                   <div class="carousel-item">
+                    <a href="/category/3"> <img src="/assets/img/home.png" class="d-block w-200" alt="..."></a>
+                  </div>
+
                   <div class="carousel-item">
-                    <img src="/assets/img/Fitness.png" class="d-block w-100" alt="...">
+                    <a href="/category/5"> <img src="/assets/img/Fitness.png" class="d-block w-200" alt="..."></a>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class=" h-100">
-                    <div class="list-group">
-                        @foreach ($categories as $category)
-                        <a href="{{ route("category", $category->id ) }}" type="button" class="list-group-item list-group-item-action">{{ $category->name }}</a>
-                        @endforeach
+
+                        <div class="sidebar has-scrollbar" data-mobile-menu>
+
+
+                              <div class="sidebar-top"  style="padding-left: 35%; padding-top: 8%;">
+                                   <h2 class="sidebar-title">Category</h2>
+                                    </button>
+                              </div>
+
+                              <ul class="sidebar-menu-category-list">
+                                @foreach ($categories as $category)
+                                <li class="sidebar-menu-category"  style="margin-top:-20px">
+
+                                  <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                                    <div class="menu-title-flex">
+                                      <p class="menu-title"> <a href="{{ route("category", $category->id ) }}" type="button" style="color:black;">{{ $category->name }}</a></p>
+                                    </div>
+
+                                    <div>
+                                        <a href="{{ route("category", $category->id ) }}" type="button" style="color:black; margin-left:-10%"> <ion-icon name="add-outline" class="add-icon"></ion-icon></a>
+                                    </div>
+
+                                  </button>
+
+
+                                </li>
+                                @endforeach
+                              </ul>
+                          </div>
                       </div>
                 </div>
               </div>
-        </div>
-    </div>
-</div>
 
 <div class="container p-0">
-   
+
 
     <div class="d-flex justify-content-between">
         <div><h5 class="mt-3 mb-0">Vêtements et Mode</h5></div>
@@ -44,7 +71,7 @@
             <div class="thumb-wrapper text-start p-0 overflow-hidden">
                 <div class="image-container">
                     <a href="{{ route('product', $product->id )}}">
-                        <img src="{{ $product->images->first()?->image }}" class="img-fluid border-bottom"> 
+                        <img src="{{ $product->images->first()?->image }}" class="img-fluid border-bottom">
                     </a>
                 </div>
                 <div class="product-detail-container p-2">
@@ -83,10 +110,11 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>						
+                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                </div>
+
             </div>
-        </div> 
+        </div>
         @endforeach
     </div>
 </div>
@@ -109,10 +137,11 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>						
+                    <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                </div>
+
             </div>
-        </div> 
+        </div>
         @endforeach
     </div>
 </div>
@@ -135,10 +164,10 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>						
+                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                </div>
             </div>
-        </div> 
+        </div>
         @endforeach
     </div>
 </div>
@@ -162,10 +191,11 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>						
+                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                </div>
+
             </div>
-        </div> 
+        </div>
         @endforeach
     </div>
 </div>
@@ -188,10 +218,10 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>						
+                   <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                </div>
             </div>
-        </div> 
+        </div>
         @endforeach
     </div>
 </div>
@@ -214,10 +244,18 @@
                 <div class="thumb-content">
                     <h6>{{ Str::limit($product->name, $limit = 25, $end = '...') }}</h6>
                     <p class="item-price"><del>{{ $product->old_price }} MAD</del> <strong>{{ $product->price }} MAD</strong></p>
-                    <a href="#" class="btn btn-outline-primary rounded-pill">Ajouter au panier</a>
-                </div>						
+
+                    @auth
+                        @if((count(\App\Models\CartDetail::where('product_id', $product->id )->where('cart_id', auth()->user()->cart->id )->get()) > 0))
+                            <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Retirer du panier</button>
+                        @else
+                            <button type="button" onclick="addToCart({{ $product->id }})" class="btn btn-outline-primary rounded-pill w-100" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+                        @endif
+                    @else
+                    <button type="button" class="btn btn-outline-primary rounded-pill w-100">Ajouter au panier</button>
+                    @endauth
             </div>
-        </div> 
+        </div>
         @endforeach
     </div>
 </div>
