@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,8 +16,9 @@ return new class extends Migration
         Schema::create('cart_details', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Product::class, 'product_id');
+            $table->foreignIdFor(Cart::class, 'cart_id');
             $table->integer('quantity');
-            $table->float('total');
+            $table->float('total')->default(0);
             $table->timestamps();
         });
     }

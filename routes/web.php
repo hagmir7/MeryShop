@@ -1,15 +1,21 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartDetailController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImagesController;
 use App\Http\Controllers\UserController;
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +28,19 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        if (!auth()->user()->cart) {
+            Cart::create([
+                'user_id' => auth()->user()->id,
+                'total' => 0
+            ]);
+            return redirect('/');
+        }
+        
+    }
+
+
+
     $clothing = Product::where('category', 1)->paginate(4);
     $electronics = Product::where('category', 2)->paginate(4);
     $Home= Product::where('category', 3)->paginate(4);
@@ -41,6 +60,7 @@ Route::get('/', function () {
         'categories' => Category::paginate(8)
     ]);
 });
+
 
 
 
@@ -96,6 +116,9 @@ Route::prefix('/user')->group(function(){
     Route::post('login-store', [UserController::class, 'loginStore'])->name('login.store');
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
     Route::get('delete/{user}', [UserController::class, 'delete'])->name('user.delete')->middleware('auth');
+    Route::get('{user}', [UserController::class, 'show'])->name('user.show')->middleware('auth');
+    Route::get('update/{user}', [UserController::class, 'update'])->name('user.update')->middleware('auth');
+    Route::put('update/store/{user}', [UserController::class, 'updateStore'])->name('user.update.store')->middleware('auth');
 });
 
 
@@ -109,5 +132,25 @@ Route::prefix('/category')->group(function(){
     Route::get('update/{category}', [CategoryController::class, 'update'])->name('category.update')->middleware('auth');
     Route::post('update/store{category}', [CategoryController::class, 'updateStore'])->name('category.update.store')->middleware('auth');
     Route::get('delete/{category}', [CategoryController::class, 'delete'])->name('category.delete')->middleware('auth');
+});
+
+
+Route::prefix('/cart')->group(function(){
+    Route::get('', [CartController::class, 'list'])->name('cart.list')->middleware('auth');
+    Route::post('create', [CartDetailController::class, 'create'])->name('cart.create')->middleware('auth');
+    Route::get('delete/{cartDetail}', [CartController::class, 'delete'])->name('cart.delete')->middleware('auth');
+});
+
+
+
+Route::prefix('/order')->group(function(){
+    Route::get('create', [OrderController::class, 'create'])->name('order.create');
+    Route::get('store', [OrderController::class, 'store'])->name('order.store');
+    Route::get('list', [OrderController::class, 'list'])->name('order.list')->middleware('auth');
+    Route::get('valid/{order}', [OrderController::class, 'valid'])->name('order.valid')->middleware('auth');
+    Route::get('cancel/{order}', [OrderController::class, 'cancel'])->name('order.cancel')->middleware('auth');
+    Route::get('{order}', [OrderController::class, 'show'])->name('order.show');
+    Route::get('delete/{order}', [OrderController::class, 'delete'])->name('order.delete');
+    Route::post('add/{order}/{product}', [OrderController::class, 'orderItem'])->name('order.add');
 });
 
