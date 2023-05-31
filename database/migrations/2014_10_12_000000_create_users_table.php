@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->text('bio')->nullable();
-            $table->enum('role', ['Admin', 'User'])->default('User');
+            $table->boolean('role')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -37,6 +37,7 @@ return new class extends Migration
             'email' => 'mery@gmail.com',
             "password" => Hash::make('mery123'),
             "token" => Str::random(40),
+            "role" => true
         ]);
     }
 

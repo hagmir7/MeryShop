@@ -14,21 +14,32 @@ class ProductController extends Controller
 {
 
 
-    public function list(){
-        $product = Product::where('status', true)->paginate(15);
+    public function list(Request $request){
+        if(isset($request->search)){
+            $products  = Product::where('name', 'LIKE', '%' . $request->search . '%')->paginate(30);
+        }else{
+            $products  = Product::paginate(30);
+        }
+        
         return view('product.list', [
-            'products' => $product
+            'products' => $products
         ]);
     }
 
-    public function listAdmin(){
-        $product = Product::where('status', true)->paginate(15);
+    public function listAdmin(Request $request){
+        !auth()->user()->role && abort(404);
+        if(isset($request->search)){
+            $products  = Product::where('name', 'LIKE', '%' . $request->search . '%')->paginate(30);
+        }else{
+            $products  = Product::paginate(30);
+        }
         return view('product.list-admin', [
-            'products' => $product
+            'products' => $products
         ]);
     }
 
     public function create() {
+        !auth()->user()->role && abort(404);
         return view('product.create', [
             'category' => Category::all(),
             'sizes' => Size::all(),
@@ -44,6 +55,7 @@ class ProductController extends Controller
 
 
     public function store(Request $request) {
+        !auth()->user()->role && abort(404);
         $validation = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
@@ -99,6 +111,7 @@ class ProductController extends Controller
 
 
     public function updateStore(Request $request, Product $product) {
+        !auth()->user()->role && abort(404);
         $validation = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
@@ -137,7 +150,16 @@ class ProductController extends Controller
 
     
     public function delete(Product $product){
+        !auth()->user()->role && abort(404);
         $product->delete();
         return redirect()->route('product.list')->with(['message' => 'Product created successfully.']);
+    }
+
+    public function deleteMultiple(Request $request){
+        !auth()->user()->role && abort(404);
+        $products = $request->input('product', []);
+        Product::whereIn('id', $products)->delete();
+        return response()->json(['message' => 'Les produits ont été supprimés avec succès!']);
+        
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,8 +17,9 @@ return new class extends Migration
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Product::class, 'product_id');
+            $table->foreignIdFor(Order::class, 'order_id');
             $table->integer('quantity');
-            $table->float('total');
+            $table->float('total')->default(0);
             $table->timestamps();
         });
     }

@@ -9,10 +9,14 @@ class Product extends Model
 {
     use HasFactory;
 
+    public $timestamps = true;
+
     protected $fillable = [
         'name', 'price', 'old_price', 'description', 'user', 'color', 'category',
-        'stock' 
+        'stock', 'created_at', 'updated_at'
     ];  
+
+    protected $guarded = ['id'];
 
 
     public function colors(){
@@ -25,6 +29,10 @@ class Product extends Model
 
     public function images(){
         return $this->hasMany(ProductImages::class, 'product');
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function user(){

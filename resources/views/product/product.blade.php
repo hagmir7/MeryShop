@@ -5,7 +5,7 @@
 <!-- About Start -->
 <div class="container-xxl py-5">
 <!-- Product Description Section -->
-<div class="container py-5">
+<div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-4 ">
         <!-- Image Slideshow -->
@@ -32,8 +32,8 @@
       </div>
       <div class="col-lg-6">
         <!-- Product Details -->
-        <h1 class="fw-bold h3">{{ $product->name }}</h1>
-        <h2 class="text-primary fw-bold">{{ $product->price }} MAD</h2>
+        <h1 class="fw-bold h5">{{ $product->name }}</h1>
+        <h2 class="text-primary fw-bold h4">{{ $product->price }} MAD</h2>
         @if ($product->old_price)
           <del class="text-muted">{{ $product->old_price }} MAD</del>
         @endif
@@ -59,8 +59,17 @@
 
         <p class="lead fs-6 my-4">{{ $product->description }}</p>
         <div class="mt-2">
-            <button class="btn btn-primary w-100">Payez maintenant</button>
-            <button class="btn btn-warning mt-2 w-100" data-bs-toggle="modal" data-bs-target="#addToCart">Ajouter au panier</button>
+          @auth
+              <button class="btn-pay w-100" data-bs-toggle="modal" data-bs-target="#checkout">Payez maintenant</button>
+            @if((count(\App\Models\CartDetail::where('product_id', $product->id )->where('cart_id',  auth()->user()->cart->id )->get()) > 0))
+              <button class="btn-shop mt-2 w-100" data-bs-toggle="modal" data-bs-target="#addToCart">Retirer du panier</button>
+            @else 
+              <button class="btn-shop mt-2 w-100" data-bs-toggle="modal" data-bs-target="#addToCart">Ajouter au panier</button>
+            @endif 
+          @else
+            <a href="{{ route('login') }}" class="btn-shop text-center"> Ajouter au panier</a>
+          @endauth
+           
           </div>
       </div>
 
@@ -99,18 +108,79 @@
         <h6 class="mb-2">Sélectionnez les tailles</h6>
         <div class="d-flex flex-wrap">
             @foreach ($product->sizes as $size)
-            <div class="py-2 me-1 rounded px-2 border mb-1">{{ $size->size}}</div>
+            <div>
+              <div class="py-2 me-1 rounded px-2 border mb-1">{{ $size->size}}</div>
+              <input type="checkbox" name="sizes[]" class="form-check-input" value="{{ $size->id }}" id="size-{{ $size->id }}">
+              <label class="form-check-label mt-1 w-100 me-1 text-center p-1" for="size-{{ $size->id }}"></label><br>
+            </div>
+
             @endforeach
         </div>
         @endif
     </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-          <button type="button" class="btn btn-primary">Ajouter au panier</button>
+          @auth
+              <button type="button" class="btn-danger" data-bs-dismiss="modal">Fermer</button>
+            @if((count(\App\Models\CartDetail::where('product_id', $product->id )->where('cart_id',  auth()->user()->cart->id )->get()) > 0))
+              <button type="button" class="btn-shop" onclick="addToCart({{ $product->id }})" id="add-btn-{{ $product->id }}">Retirer du panier</button>
+            @else
+              <button type="button" class="btn-shop" onclick="addToCart({{ $product->id }})" id="add-btn-{{ $product->id }}">Ajouter au panier</button>
+            @endif
+          @else
+            <a href="{{ route('login') }}" class="btn-shop"> Ajouter au panier</a>
+          @endauth
+
         </div>
       </div>
     </div>
   </div>
-<!-- About End -->
+
+
+<!-- Chekcout model -->
+<div class="modal" id="checkout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="checkoutLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="checkoutLabel">Acheter Maintenant</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{{ route('order.pay') }}" class="billing-details">
+          @csrf
+            <div class="form-group">
+                <input class="form-control mt-2" value="mery" type="text" required="" name="first_name" placeholder="Prénom">
+            </div>
+            <div class="form-group">
+                <input class="form-control mt-2" value="shop" type="text" required="" name="last_name" placeholder="Nom">
+            </div>
+            <div class="form-group">
+                <input class="form-control mt-2" value="mery@gmail.com" type="email" required="" name="email" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <input class="form-control mt-2" type="text" required="" name="address" placeholder="Adresse">
+            </div>
+            <div class="form-group">
+                <input class="form-control mt-2" type="text" required="" name="city" placeholder="Ville">
+            </div>
+            <div class="form-group">
+                <input class="form-control mt-2" type="text" required="" name="country" placeholder="Pays">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <input class="form-control mt-2" value="" type="tel" required="" name="phone" placeholder="Téléphone">
+            </div>
+            <input type="hidden" name="product" value="{{ $product->id }}">
+            <button type="submit" class="btn btn-primary  w-100 mt-2 rounded-pill">Envoyer</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection

@@ -1,15 +1,26 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartDetailController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImagesController;
 use App\Http\Controllers\UserController;
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Carbon;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,26 +33,26 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    $clothing = Product::where('category', 1)->paginate(4);
-    $electronics = Product::where('category', 2)->paginate(4);
-    $Home= Product::where('category', 3)->paginate(4);
-    $Health = Product::where('category', 4)->paginate(4);
-    $Sports = Product::where('category', 5)->paginate(4);
-    $Toys = Product::where('category', 6)->paginate(4);
-    $Books = Product::where('category', 7)->paginate(4);
-    return view('index',[
-        'products' => Product::paginate(15),
-        'clothing' => $clothing,
-        'electronics' => $electronics,
-        'Home' => $Home,
-        'Health' => $Health,
-        'Sports' => $Sports,
-        'Toys' => $Toys,
-        'Books' => $Books,
-        'categories' => Category::paginate(8)
-    ]);
-});
 
+    if (Auth::check()) {
+        if (!auth()->user()->cart) {
+            Cart::create([
+                'user_id' => auth()->user()->id,
+                'total' => 0
+            ]);
+            return redirect('/');
+        }
+    }
+
+    return view('index');
+})->name('home');
+
+
+
+
+
+
+Route::get('/chart', [ChartController::class, 'viewsChart'])->name('product.chart');
 
 
 
@@ -55,6 +66,7 @@ Route::prefix('/product')->group(function () {
     Route::get('update/{product}', [ProductController::class, 'update'])->name('product.update');
     Route::get('{product}', [ProductController::class, 'product'])->name('product');
     Route::put('update/store/{product}', [ProductController::class, 'updateStore'])->name('product.update.store');
+    Route::post('delete', [ProductController::class, 'deleteMultiple'])->name('product.delete.multiple')->middleware('auth');
     Route::get('delete/{product}', [ProductController::class, 'delete'])->name('product.delete')->middleware('auth');
 
 });
@@ -66,9 +78,15 @@ Route::prefix('/image')->group(function(){
 });
 
 Route::get('/dashboard', function(){
+    !auth()->user()->role && abort(404);
     return view('dashboard',[
-        'contacts' => Contact::query()->count(),
-        'admins' => User::query()->count(),
+        'contacts' => Contact::all(),
+        'users' => User::all()->count(),
+        'orders' => Order::all(),
+        'new_orders' => Order::where('status', null)->get(),
+        'products' => Product::all(),
+        'categories' => Category::all(),
+        'users' => User::query()->count(),
     ]);
 
 
@@ -92,9 +110,6 @@ Route::prefix('/user')->group(function(){
     Route::get('list', [UserController::class, 'list'])->name('user.list')->middleware('auth');
     Route::get('register', [UserController::class, 'create'])->name('register');
     Route::post('store', [UserController::class, 'store'])->name('store_user');
-    Route::get('login', [UserController::class, 'login'])->name('login');
-    Route::post('login-store', [UserController::class, 'loginStore'])->name('login.store');
-    Route::get('logout', [UserController::class, 'logout'])->name('logout');
     Route::get('delete/{user}', [UserController::class, 'delete'])->name('user.delete')->middleware('auth');
     Route::get('{user}', [UserController::class, 'show'])->name('user.show')->middleware('auth');
     Route::get('update/{user}', [UserController::class, 'update'])->name('user.update')->middleware('auth');
@@ -112,5 +127,40 @@ Route::prefix('/category')->group(function(){
     Route::get('update/{category}', [CategoryController::class, 'update'])->name('category.update')->middleware('auth');
     Route::post('update/store{category}', [CategoryController::class, 'updateStore'])->name('category.update.store')->middleware('auth');
     Route::get('delete/{category}', [CategoryController::class, 'delete'])->name('category.delete')->middleware('auth');
+    Route::post('delete', [CategoryController::class, 'deleteMultiple'])->name('category.delete.multiple')->middleware('auth');
 });
+
+
+Route::prefix('/cart')->group(function(){
+    Route::get('', [CartController::class, 'list'])->name('cart.list')->middleware('auth');
+    Route::post('create', [CartDetailController::class, 'create'])->name('cart.create')->middleware('auth');
+    Route::get('delete/{cartDetail}', [CartController::class, 'delete'])->name('cart.delete')->middleware('auth');
+});
+
+
+
+Route::prefix('/order')->group(function(){
+    Route::get('create', [OrderController::class, 'create'])->name('order.create');
+    Route::post('pay-now', [OrderController::class, 'payNow'])->name('order.pay');
+    Route::post('store', [OrderController::class, 'store'])->name('order.store');
+    Route::get('list', [OrderController::class, 'list'])->name('order.list')->middleware('auth');
+    Route::get('valid/{order}', [OrderController::class, 'valid'])->name('order.valid')->middleware('auth');
+    Route::get('cancel/{order}', [OrderController::class, 'cancel'])->name('order.cancel')->middleware('auth');
+    Route::get('{order}', [OrderController::class, 'show'])->name('order.show');
+    Route::get('delete/{order}', [OrderController::class, 'delete'])->name('order.delete');
+    Route::post('add/{order}/{product}', [OrderController::class, 'orderItem'])->name('order.add');
+});
+
+
+
+Route::prefix('login')->group(function(){
+    Route::get('google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+    Route::get('google/callback', [LoginController::class, 'handleGoogleCallback']);
+    Route::get('', [LoginController::class, 'login'])->name('login');
+    Route::post('login', [LoginController::class, 'loginStore'])->name('login.store');
+    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+});
+
+
+
 

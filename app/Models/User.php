@@ -25,7 +25,8 @@ class User extends Authenticatable
         'address',
         'bio',
         'phone',
-        'avatar'
+        'avatar',
+        'role'
     ];
 
     /**
@@ -51,9 +52,10 @@ class User extends Authenticatable
     public function products(){
         return $this->hasMany(Product::class);
     }
-
+   
+   
     public function cart(){
-        return $this->belongsTo(Cart::class);
+        return $this->hasOne(Cart::class, 'user_id', 'id');
     }
 
 }

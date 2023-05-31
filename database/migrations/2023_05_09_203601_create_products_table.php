@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class, 'user');
+            $table->foreignIdFor(Category::class, 'category'); // belongs to on category
             $table->string('name');
             $table->float('price');
             $table->float('old_price')->nullable();
             $table->integer('stock');
             $table->text('description');
             $table->boolean('status')->default(true);
-            $table->foreignIdFor(User::class, 'user');
-            $table->foreignIdFor(Category::class, 'category'); // belongs to on category
             $table->timestamps();
         });
     }

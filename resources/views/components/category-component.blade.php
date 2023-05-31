@@ -1,9 +1,9 @@
 @foreach ($categories as $category)
-<div class="col-sm-3 mb-3">
-    <div class="thumb-wrapper wow fadeInUp">
+<div class="col-md-2 mb-3 p-1">
+    <div class="thumb-wrapper wow fadeInUp" style="padding: 12px, 12px">
         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
             <div class="img-box">
-                <img src="{{ $category->image }}" width="100%" class="cover" alt="{{ $category->name }}">
+                <img src="{{ $category->image }}" width="100%" class="cover" style="object-fit: contain" alt="{{ $category->name }}">
             </div>
         </a>
         <div class="thumb-content">

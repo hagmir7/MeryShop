@@ -51,30 +51,7 @@ class UserController extends Controller
         }
     }
 
-
-    public function login(){
-        if(Auth::user()){
-            return redirect('dashboard');
-        }else{
-            return view("user/login");
-        }
-    }
-
-
-    public function loginStore(Request $request){
-        $credentials = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
-        } else {
-            return back()->withErrors(['email' => "les informations d'identification invalides"]);
-        }
-
-    }
+    
     public function logout(){
         Auth::logout();
         return redirect('/');
@@ -87,11 +64,15 @@ class UserController extends Controller
     }
 
 
-    public function update(User $user){
-        $user->id !== auth()->user()->id && abort(404);
-        return view('user.update', [
-            "user" => $user
-        ]);
+    public function update(User $user) {
+        // dd(Auth::user()->role);
+        if (Auth::user()->role == 1 || Auth::user()->id == $user->id) {
+            return view('user.update', [
+                "user" => $user
+            ]);
+        } else {
+            return abort(404);
+        }
     }
 
     public function updateStore(Request  $request,User $user){
@@ -121,7 +102,7 @@ class UserController extends Controller
     
         }
         $user->update($data);
-        return redirect()->route('user.show', $user->id)->with(['message' => "Profile updated successfully"]);
+        return redirect()->route('user.update', $user->id)->with(['message' => "Profile updated successfully"]);
     }
 
 

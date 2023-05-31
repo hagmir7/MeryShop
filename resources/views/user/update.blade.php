@@ -6,11 +6,11 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6 mt-3 card p-2 mt-2">
-            <h1 class="h6 text-center">Update Your Profile</h1>
+            <h1 class="h6 text-center">Votre profil</h1>
             @foreach ($errors->all() as $error)
                 <div class="alert alert-danger p-2"> {{ $error }} </div>
             @endforeach
-            <div class="text-center">
+            <div class="d-flex justify-content-center">
                 <img src="{{ $user->avatar }}" width="60px" height="60px" class="rounded-pill cover border" alt="{{ $user->first_name }}">
             </div>
             <form action="{{ route('user.update.store', $user->id ) }}" method="POST" enctype="multipart/form-data" >

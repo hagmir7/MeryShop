@@ -1570,14 +1570,14 @@ body::-webkit-scrollbar-thumb:hover {
     text-transform: uppercase;
     -webkit-border-radius: var(--border-radius-md);
     border-radius: var(--border-radius-md);
-    margin-bottom: 15px;
     -webkit-transition: var(--transition-timing);
     -o-transition: var(--transition-timing);
     transition: var(--transition-timing);
+    font-size: 14px;
 }
 
 .product-featured .add-cart-btn:hover {
-    background: var(--eerie-black);
+    background: hsl(353deg 100% 75.21%);
     color: var(--white);
 }
 

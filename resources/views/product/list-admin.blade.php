@@ -13,22 +13,22 @@
         <h4>Products ({{ $products->count() }})</h4>
         <div class="d-flex justify-content-between">
             <p><a class="btn btn-outline-success btn-sm" href="{{ route('product.create') }}">+ Créer un produit</a></p>
-            <p><input type="search" class="form-control form-control-sm border" placeholder="Search"></p>
+            <p><button class="btn btn-outline-danger btn-sm" id="btn-delete" onclick="deleteProducts()"><i class="bi bi-trash"></i> Supprimer sélectionnée</button></p>
+            <p><form method="GET"> <input type="search" name="search" class="form-control form-control-sm border" placeholder="Search"></form></p>
         </div>
         <thead>
-
             <tr>
                 <th><input type="checkbox" id="checkall"></th>
-                <th>Product Name</th>
-                <th>Category</th>
-                <th>Price</th>
+                <th>Nom du produit</th>
+                <th>Catégorie</th>
+                <th>Prix</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($products as $product)
-            <tr>
-                <td><input type="checkbox" class="checkthis"></td>
+            <tr id="product-{{ $product->id}}">
+                <td><input type="checkbox" class="checkthis" name="product[]" value="{{ $product->id }}"></td>
                 <td><a class="text-black underline-none" href="{{ route('product', $product->id) }}">{{ Str::limit($product->name, 40, '...') }}</a></td>
                 <td><a class="text-black" href="{{ route('category', $product?->caty->id) }}">{{ $product->caty->name }}</a></td>
                 <td>{{ $product->price }} MAD</td>
@@ -46,4 +46,60 @@
     {{ $products->links('vendor.pagination.bootstrap-5') }}
 
 </div>
+
+
+@endsection
+
+@section('script')
+<script>
+
+    $('#checkall').change(function() {
+        $('input[name="product[]"]').prop('checked', $(this).prop('checked'));
+    });
+
+
+    const deleteProducts = (e) => {
+        const products = $('input[name="product[]"]:checked');
+        const listProducts = products.map(function () {
+            return this.value;
+        }).get();
+
+        const deleteBtn = document.querySelector('#btn-delete')
+
+        if (confirm('Voulez-vous vraiment supprimer ce produits ?')) {
+            deleteBtn.innerHTML = (
+                '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span>  Suppression...</span>'
+            )
+            $.ajax({
+                url: `{{ route('product.delete.multiple') }}`,
+                method: "POST",
+                data: {
+                    product: listProducts
+                },
+                success: function (response) {
+                    listProducts.forEach(element => {
+                        document.querySelector('#product-'+element).remove()
+                    });
+                    deleteBtn.innerHTML = 'Supprimer sélectionnée';
+                    Swal.fire({
+                        title: 'Succès!',
+                        text: response.message,
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                },
+                error: function (xhr) {
+                    deleteBtn.innerHTML = 'Supprimer sélectionnée'
+                    Swal.fire({
+                        title: 'Error!',
+                        text: xhr.responseJSON.message,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    })
+                }
+            });
+        }
+
+    }
+</script>
 @endsection

@@ -16,7 +16,9 @@
                 <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control mt-2" placeholder="Email">
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password" id="password" class="form-control mt-2" placeholder="enter votre mot de passe">
-                <button class="btn btn-primary mt-4 w-100">Se connecter</button>
+                <button class="btn btn-pay mt-4 w-100">Se connecter</button>
+                <a class="btn btn-shop mt-1 w-100" href="{{ route('login.google') }}"> <i class="bi bi-google"></i> Se connecter avec Google</a>
+
                 <a href="{{ route('register') }}" class="btn btn-outline-primary mt-4 w-100">Créer un nouveau compte</a>
             </form>
         </div>
