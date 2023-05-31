@@ -3,11 +3,11 @@
 
 
 @section('content')
-<div class="container my-5">
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 card p-2">
+        <div class="col-md-12 card p-2">
             <h4>Command #{{ $order->id }}</h4>
-            <p class="mb-1 d-flex">Client : &#xa0; <strong><a href="{{ route('user.show', $order->user->id ) }}">{{ $order->user->first_name}} {{ $order->user->last_name}}</a></strong> </p>
+            <p class="mb-1 d-flex">Client : &#xa0; <strong><a href="{{ route('user.update', $order->user->id ) }}">{{ $order->user->first_name}} {{ $order->user->last_name}}</a></strong> </p>
 
             <p class="mt-1">Telephone : <strong>{{ $order->phone }}</strong> </p>
             <p class="mt-1">Email : <strong>{{ $order->email }}</strong> </p>
@@ -22,8 +22,10 @@
             <table class="table border">
               <thead class="border-0">
                 <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Quantity</th>
+                  <th scope="col">Produits</th>
+                  <th scope="col">Quantité</th>
+                  <th scope="col">Couleurs</th>
+                  <th scope="col">Tailles</th>
                   <th scope="col">Total</th>
                 </tr>
               </thead>
@@ -32,6 +34,8 @@
                 <tr class="border-end">
                   <td class="border-end"><a class="text-black" href="{{ route('product', $item->id ) }}">{{ Str::limit($item->product->name, 50, '...') }}</a></td>
                   <td class="border-end">{{ $item->quantity }}</td>
+                  <td class="border-end">@foreach ($item->colors as $color)  {{ $color->code }}, @endforeach</td>
+                  <td class="border-end">@foreach ($item->sizes as $size)  {{ $size->size }}, @endforeach</td>
                   <td class="border-end">{{ $item->total }} MAD</td>
                 </tr>
                 @endforeach
@@ -44,15 +48,6 @@
             @else
                 <h6 class="text-center my-5">No Products</h6>
             @endif
-    
-    
-    
-    
-            
-    
-    
-    
-    
         </div>
     </div>
 </div>

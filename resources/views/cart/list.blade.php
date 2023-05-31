@@ -39,8 +39,11 @@
                 </div>
                 <a href="{{ route('order.create') }}" class="btn btn-primary my-3 w-100">Envoyer La Commande</a>
             @else
-                <div class="my-5">
-                    <h4 class="py-5 text-center">No Produits</h4>
+                <div class="my-5 py-5 d-flex justify-content-center">
+                   <div>
+                        <div class="text-center"><i class="bi bi-archive h1"></i></div>
+                        <h4 class="text-center">No Produits</h4>
+                   </div>
                 </div>
              @endif
         </div>

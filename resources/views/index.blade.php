@@ -7,21 +7,29 @@
         <div class="row g-3 ">
             <div id="carouselExampleSlidesOnly" class="carousel slide col-md-8  p-0 overflow-hidden"
                 data-bs-ride="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner rounded shadow-sm">
                     <div class="carousel-item active">
-                        <a href="/category/1"><img src="/assets/img/Clothing.png" class="d-block w-100" alt="Clothing"></a>
+                        <a href="/category/1"><img src="/fake/cover-1.png" class="d-block w-100" alt="Clothing"></a>
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/category/2"><img src="/assets/img/Electronic.png" class="d-block w-100" alt="..."></a>
+                        <a href="/category/2"><img src="/fake/cover-2.png" class="d-block w-100" alt="..."></a>
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/category/3"> <img src="/assets/img/home.png" class="d-block w-100" alt="..."></a>
+                        <a href="/category/3"> <img src="/fake/cover-3.png" class="d-block w-100" alt="..."></a>
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/category/5"> <img src="/assets/img/Fitness.png" class="d-block w-100" alt="..."></a>
+                        <a href="/category/4"> <img src="/fake/cover-4.png" class="d-block w-100" alt="..."></a>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="/category/6"> <img src="/fake/cover-5.png" class="d-block w-100" alt="..."></a>
+                    </div>
+
+                    <div class="carousel-item">
+                        <a href="/category/5"> <img src="/fake/cover-6.png" class="d-block w-100" alt="..."></a>
                     </div>
                 </div>
             </div>
@@ -32,13 +40,13 @@
                         <h2 class="sidebar-title text-center">CATÉGORIES</h2>
                     </div>
     
-                    <ul class="sidebar-menu-category-list p-2 m-0">
+                    <ul class="sidebar-menu-category-list p-2 m-0 pb-0">
                         @foreach ($categories as $category)
                         <li class="sidebar-menu-category" style="margin-top:-20px">
-                            <div class="sidebar-accordion-menu d-flex mb-2">
+                            <div class="sidebar-accordion-menu d-flex mb-1">
                                 <div class="menu-title-flex d-flex">
-                                    <img src="{{ $category->image }}" alt="{{ $category->name }}" width="30px" height="30px"> &#xa0;&#xa0;
-                                    <p class="menu-title"> <a href="{{ route("category", $category->id ) }}" type="button" style="color:black;">{{ $category->name }}</a></p>
+                                    <img src="{{ $category->image }}" alt="{{ $category->name }}" width="25px" height="25px"> &#xa0;&#xa0;
+                                    <p class="menu-title mb-3"> <a href="{{ route("category", $category->id ) }}" type="button" style="color:black;">{{ $category->name }}</a></p>
                                 </div>
     
                                 <div>
@@ -67,7 +75,7 @@
         {{-- @dd(array_slice($category->products->toArray(), 0, 4)) --}}
         @foreach ($category->products->sortByDesc('id')->take(4) as $product)
         <div class="col-sm-3 mb-3">
-            <div class="thumb-wrapper wow fadeInUp" data-wow-delay="0.{{$loop->index + 1}}s">
+            <div class="thumb-wrapper wow fadeInUp py-2" data-wow-delay="0.{{$loop->index + 1}}s">
                 <a href="{{ route('product', $product->id ) }}">
                     <div class="img-box">
                         <img src="{{ $product->images->first()?->image }}" class="img-fluid" alt="Speaker">

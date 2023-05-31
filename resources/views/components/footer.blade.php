@@ -39,6 +39,11 @@
             <a href="{{ route('contact.create') }}" class="footer-nav-link">Contactez-nous</a>
           </li>
         
+          @auth
+          <li class="footer-nav-item">
+            <a href="{{ route('logout') }}" class="footer-nav-link">Deconnexion</a>
+          </li>
+          @else 
           <li class="footer-nav-item">
             <a href="{{ route('login') }}" class="footer-nav-link">Connexion</a>
           </li>
@@ -46,6 +51,8 @@
           <li class="footer-nav-item">
             <a href="{{ route('register') }}" class="footer-nav-link">Inscrire</a>
           </li>
+          @endauth
+
         
         </ul>
 

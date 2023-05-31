@@ -33,17 +33,6 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-
-    if (Auth::check()) {
-        if (!auth()->user()->cart) {
-            Cart::create([
-                'user_id' => auth()->user()->id,
-                'total' => 0
-            ]);
-            return redirect('/');
-        }
-    }
-
     return view('index');
 })->name('home');
 

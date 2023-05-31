@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,6 +61,7 @@ class LoginController extends Controller
                 'email' => $user->getEmail(),
                 'password' => Hash::make(Str::random(16)),
             ]);
+            Cart::create(['user_id' => $newUser->id, 'total' => 0 ]);
             auth()->login($newUser);
         }
 

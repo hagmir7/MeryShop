@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\OrderDetailColor;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,11 +32,16 @@ class OrderController extends Controller
         $order = Order::create($validation);
 
         auth()->user()->cart->items->map(function($item) use($order){
-            OrderDetail::create([
+            $orderDetail = OrderDetail::create([
                 'product_id' => $item->product->id,
                 'order_id' => $order->id,
                 'quantity' => $item->quantity
             ]);
+
+            
+            $orderDetail->colors()->sync($item->colors);
+            $orderDetail->sizes()->sync($item->sizes);
+
             $item->delete();
         });
 
@@ -108,7 +114,7 @@ class OrderController extends Controller
             'quantity' => 1
         ]);
 
-        return redirect()->back()->with(['thanks' => 'Votre commande a été envoyée ! Vous serez contacté rapidement.']);
+        return redirect()->route('home')->with(['message' => 'Votre commande est en cours de traitement un conseiller vous contactera dans le plus bref détai.']);
     }
 }
 

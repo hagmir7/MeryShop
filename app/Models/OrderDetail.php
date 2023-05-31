@@ -32,4 +32,13 @@ class OrderDetail extends Model
         });
 
     }
+
+    
+    public function sizes(){
+        return $this->belongsToMany(Size::class, 'order_detail_sizes', 'order_details_id');
+    }
+
+    public function colors(){
+        return $this->belongsToMany(Color::class, 'order_detail_colors', 'order_details_id');
+    }
 }

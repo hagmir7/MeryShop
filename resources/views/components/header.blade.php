@@ -25,16 +25,16 @@
 
           <select name="currency">
 
-            <option value="usd">USD &dollar;</option>
-            <option value="eur">EUR &euro;</option>
+            <option value="MAD">MAD </option>
+            <option value="EUR">EUR </option>
 
           </select>
 
           <select name="language">
-
+            <option value="fr">Fran&ccedil;ais</option>
             <option value="en-US">English</option>
             <option value="es-ES">Espa&ntilde;ol</option>
-            <option value="fr">Fran&ccedil;ais</option>
+            
 
           </select>
 

@@ -21,7 +21,7 @@
                     @foreach ($orders as $order)
                     <tr>
                         <td>
-                            <a href="{{ route('user.show', $order->user->id )}}">{{ $order->user->first_name }} {{ $order->user->last_name }}</a>
+                            <a href="{{ route('user.update', $order->user->id )}}">{{ $order->user->first_name }} {{ $order->user->last_name }}</a>
                         </td>
                         <td>{{ $order->getTotal() }} MAD</td>
                         @if ($order->status == true)

@@ -4,7 +4,7 @@
 
 
 <div class="container">
-    <div class="row mt-3">
+    <div class="row my-3 ">
         <div class="col-md-6 pb-2">
             <div class="section-title text-center col-12">
                 <h3 class="title">VOTRE COMMANDE</h3>

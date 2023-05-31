@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,17 +37,18 @@ class UserController extends Controller
             ]); 
 
 
-            User::create([
+            $newUser = User::create([
                 "first_name" => $request->input('first_name'),
                 "last_name" => $request->input('last_name'),
                 "email" => $request->input('email'),
                 "password" => Hash::make($request->password),
                 "token" => Str::random(40),
             ]);
+            Cart::create(['user_id' => $newUser->id, 'total' => 0 ]);
+            auth()->login($newUser);
 
-            return redirect()->route('user.list')->with('message', 'Utilisateur créé avec succès');
+            return redirect()->route('home')->with('message', 'Utilisateur créé avec succès');
         }else{
-            
             throw ValidationException::withMessages(['password' => 'This value is incorrect']);
         }
     }
