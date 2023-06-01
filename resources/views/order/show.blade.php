@@ -16,8 +16,8 @@
             <p class="mt-1">Ville : <strong>{{ $order->city }}</strong> </p>
             <p class="mt-1">Adrisse : <strong>{{ $order->address }}</strong> </p>
             <p>Total : <strong>{{ $order->getTotal() }} MAD</strong> </p>
-         
-    
+
+
             @if (count($order->details) > 0)
             <table class="table border">
               <thead class="border-0">
@@ -34,7 +34,7 @@
                 <tr class="border-end">
                   <td class="border-end"><a class="text-black" href="{{ route('product', $item->id ) }}">{{ Str::limit($item->product->name, 50, '...') }}</a></td>
                   <td class="border-end">{{ $item->quantity }}</td>
-                  <td class="border-end">@foreach ($item->colors as $color)  {{ $color->code }}, @endforeach</td>
+                  <td class="border-end">@foreach ($item->colors as $color)  {{ $color->name }}, @endforeach</td>
                   <td class="border-end">@foreach ($item->sizes as $size)  {{ $size->size }}, @endforeach</td>
                   <td class="border-end">{{ $item->total }} MAD</td>
                 </tr>

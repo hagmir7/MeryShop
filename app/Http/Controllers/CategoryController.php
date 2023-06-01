@@ -26,7 +26,7 @@ class CategoryController extends Controller
         return view('category.list-admin', [
             'categories' => $categories
         ]);
-    } 
+    }
 
 
     public function create(){
@@ -70,12 +70,12 @@ class CategoryController extends Controller
             $data = array_merge($data, ['image' => $url]);
         }
         $category->update($data);
-        return redirect()->route('category.list.admin')->with(['message' => "Category updated successfully."]);
+        return redirect()->route('category.list.admin')->with(['message' => "Catégorie mise à jour avec succès."]);
     }
 
     public function delete(Category $category){
         $category->delete();
-        return redirect()->route('category.list.admin')->with(['message' => "Category deleted successfully."]);
+        return redirect()->route('category.list.admin')->with(['message' => "Catégorie supprimée avec succès."]);
     }
 
     public function category(Category $category){
@@ -89,6 +89,6 @@ class CategoryController extends Controller
         $categories = $request->input('category', []);
         Category::whereIn('id', $categories)->delete();
         return response()->json(['message' => 'Les Catégories ont été supprimés avec succès!']);
-        
+
     }
 }

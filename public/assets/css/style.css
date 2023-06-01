@@ -6,6 +6,7 @@
     --dark: #111111;
 }
 
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -360,7 +361,7 @@ h6,
     position: relative;
     display: inline-block;
   }
-  
+
   .item-description {
     position: absolute;
     top: 100%;
@@ -374,12 +375,12 @@ h6,
     max-width: 200px;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-  
+
   .item:hover .item-description {
     opacity: 1;
     visibility: visible;
   }
-  
+
   .item-description::before {
     content: "";
     position: absolute;
@@ -474,20 +475,20 @@ h6,
     align-items: center;
     position: relative;
   }
-  
+
   .cart-item img {
     max-width: 100px;
     margin-right: 10px;
   }
-  
+
   .cart-item-title {
     font-weight: bold;
   }
-  
+
   .cart-item-qty {
     margin-right: 10px;
   }
-  
+
   .cart-item-remove-btn {
     margin-left: auto;
     position: absolute;

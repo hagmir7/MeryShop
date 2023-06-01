@@ -1,5 +1,5 @@
 @foreach ($categories as $category)
-<div class="col-md-2 mb-3 p-1">
+<div class="col-md-2 mb-3 p-1" style="margin-left: 8px ; margin-right:5px">
     <div class="thumb-wrapper wow fadeInUp" style="padding: 12px, 12px">
         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
             <div class="img-box">

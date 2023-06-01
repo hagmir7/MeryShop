@@ -7,7 +7,8 @@
       <div class="container">
         {{-- Logo --}}
         <a href="/" class="header-logo">
-          <img src="/assets2/images/logo/logo.svg" alt="Anon's logo" width="120" height="36">
+          <img src="/assets2/images/logo/logo.svg" alt="mery logo" width="120" height="56">
+
         </a>
 
         {{-- Search --}}
@@ -21,24 +22,7 @@
         </div>
 
         {{-- lang and curency --}}
-        <div class="header-top-actions">
 
-          <select name="currency">
-
-            <option value="MAD">MAD </option>
-            <option value="EUR">EUR </option>
-
-          </select>
-
-          <select name="language">
-            <option value="fr">Fran&ccedil;ais</option>
-            <option value="en-US">English</option>
-            <option value="es-ES">Espa&ntilde;ol</option>
-            
-
-          </select>
-
-        </div>
 
       </div>
 
@@ -109,20 +93,27 @@
 
             </ul>
 
-  
+
           </div>
         </nav>
 
 
         @auth
         <div class="header-user-actions">
-          <a href="{{ route('user.update', auth()->user()->id ) }}" class="action-btn fs-4">
-            <ion-icon name="person-outline" role="img" class="md hydrated" aria-label="person outline"></ion-icon>
-          </a>
+            <div class="dropdown action-btn fs-4">
+                <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ion-icon name="person-outline" role="img" class="md hydrated" aria-label="person outline"></ion-icon>
+                </button>
           {{-- <button class="action-btn fs-4">
             <ion-icon name="heart-outline" role="img" class="md hydrated" aria-label="heart outline"></ion-icon>
             <span class="count">0</span>
-          </button> --}}
+          </button>
+           --}}
+           <ul class="dropdown-menu">
+            <li><a class="btn mx-1" href="{{ route('user.update', auth()->user()->id ) }}">Profile</a></li>
+            <li><a class="btn mx-1" href="{{ route('logout') }}" style="font-size: 15px">Se déconnecter</a></li>
+          </ul>
+        </div>
           <a href="{{ route('cart.list') }}" class="action-btn fs-4">
             <ion-icon name="bag-handle-outline" role="img" class="md hydrated" aria-label="bag handle outline"></ion-icon>
             <span class="count" id="cart-items">{{ auth()->user()->cart->items->count()}}</span>
@@ -130,13 +121,13 @@
         </div>
         @else
         <div class="header-user-actions">
-          <div class="dropdown action-btn fs-4">
+            <div class="dropdown action-btn fs-4">
             <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <ion-icon name="person-outline" role="img" class="md hydrated" aria-label="person outline"></ion-icon>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('login')}}">Se connecter</a></li>
-              <li><a class="dropdown-item" href="{{ route('register') }}">Inscription</a></li>
+              <li><a  class="btn mx-1" href="{{ route('login')}}">Se connecter</a></li>
+              <li><a  class="btn mx-1" href="{{ route('register') }}">Inscription</a></li>
             </ul>
           </div>
           {{-- <button class="action-btn fs-4">

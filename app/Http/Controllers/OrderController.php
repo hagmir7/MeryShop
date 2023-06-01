@@ -38,7 +38,7 @@ class OrderController extends Controller
                 'quantity' => $item->quantity
             ]);
 
-            
+
             $orderDetail->colors()->sync($item->colors);
             $orderDetail->sizes()->sync($item->sizes);
 
@@ -74,7 +74,7 @@ class OrderController extends Controller
 
     public function valid(Order $order){
         $order->update(['status' =>  true]);
-        return redirect()->route('order.list')->with(["message" => 'Order has been validate successfully.']);
+        return redirect()->route('order.list')->with(["message" => 'La commande a été validée avec succès.']);
     }
 
     public function cancel(Order $order) {
@@ -83,13 +83,13 @@ class OrderController extends Controller
         $order->server->update([
             'wage' => $order->server->wage -= $order->getTotal()
         ]);
-        return redirect()->route('dashboard')->with(["message" => 'Order has been canceld successfully.']);
+        return redirect()->route('dashboard')->with(["message" => 'La commande a été annulée avec succès.']);
     }
 
 
     public function delete(Order $order) {
         $order->delete();
-        return redirect()->route('dashboard')->with(["message" => 'Order has been deleted successfully.']);
+        return redirect()->route('dashboard')->with(["message" => 'La commande a été supprimée avec succès.']);
     }
 
 

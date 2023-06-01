@@ -17,6 +17,6 @@ class ProductImagesController extends Controller
 
     public function delete(ProductImages $image){
         $image->delete();
-        return redirect()->back()->with(['message' => "Image Deleted successfully"]);
+        return redirect()->back()->with(['message' => "Image supprimée avec succès."]);
     }
 }

@@ -42,23 +42,24 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
   <!--  - favicon  -->
-  {{--
-  <link rel="shortcut icon" href="/assets2/images/logo/favicon.ico" type="image/x-icon"> --}}
+
   {{-- laravel csrf token --}}
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   {{-- Custem css --}}
   <link rel="stylesheet" href="/assets2/css/style-prefix.css">
+  <link rel="shortcut icon" href="/assets2/images/logo/mery.png" type="image/x-icon">
 
-
-
+<style>
+    
+</style>
 
 </head>
 
 
 
 
-<body class="bg-light">
+<body style="background-color: #faf5f65c">
   <!-- Spinner Start -->
   <div id="spinner"
     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">

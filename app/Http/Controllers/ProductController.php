@@ -20,7 +20,7 @@ class ProductController extends Controller
         }else{
             $products  = Product::paginate(30);
         }
-        
+
         return view('product.list', [
             'products' => $products
         ]);
@@ -91,12 +91,12 @@ class ProductController extends Controller
         // Update sizes
         $product->sizes()->sync($request->input('size', []));
 
-        return redirect()->route('product.list')->with(['message' => 'Product created successfully.']);
+        return redirect()->route('product.list')->with(['message' => 'Produit créé avec succès.']);
     }
 
 
     public function update(Product $product){
-        
+
         return view('product.update', [
             'category' => Category::all(),
             'product' => $product,
@@ -144,15 +144,15 @@ class ProductController extends Controller
         // Update sizes
         $product->sizes()->sync($request->input('size', []));
 
-        return redirect()->route('product', $product->id)->with(['message' => 'Product updated successfully.']);
+        return redirect()->route('product', $product->id)->with(['message' => 'Produit mis à jour avec succès.']);
     }
 
 
-    
+
     public function delete(Product $product){
         !auth()->user()->role && abort(404);
         $product->delete();
-        return redirect()->route('product.list')->with(['message' => 'Product created successfully.']);
+        return redirect()->route('product.list')->with(['message' => 'Produit créé avec succès.']);
     }
 
     public function deleteMultiple(Request $request){
@@ -160,6 +160,6 @@ class ProductController extends Controller
         $products = $request->input('product', []);
         Product::whereIn('id', $products)->delete();
         return response()->json(['message' => 'Les produits ont été supprimés avec succès!']);
-        
+
     }
 }

@@ -34,7 +34,7 @@ class UserController extends Controller
                 'email' => 'required|email|unique:users',
                 "password" => 'required|string|max:100',
                 'password_1' => 'required'
-            ]); 
+            ]);
 
 
             $newUser = User::create([
@@ -53,7 +53,7 @@ class UserController extends Controller
         }
     }
 
-    
+
     public function logout(){
         Auth::logout();
         return redirect('/');
@@ -101,16 +101,17 @@ class UserController extends Controller
             $path = $avatar->store('public/avatars');
             $url = Storage::url($path);
             $data = array_merge($data, ["avatar" => $url]);
-    
+
         }
         $user->update($data);
-        return redirect()->route('user.update', $user->id)->with(['message' => "Profile updated successfully"]);
+        return redirect()->route('user.update', $user->id)->with(['message' => "Mise à jour du profil réussie"]);
     }
 
 
 
     public function delete(User $user){
-        $user->role !== 'Admin' && abort(404);
+
+        !auth()->user()->role == 1 && abort(404);
         $user->delete();
         return redirect()->route('user.list')->with('message','Utilisateur est supprimer avec succès');
     }

@@ -18,32 +18,32 @@
         </ul>
 
         <ul class="footer-nav-list">
-        
+
           <li class="footer-nav-item">
             <h2 class="nav-title">Liens importants</h2>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="/" class="footer-nav-link">Accueil</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="{{ route('product.list') }}" class="footer-nav-link">Nouveaux produits</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="{{ route('category.list') }}" class="footer-nav-link">Catégories</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="{{ route('contact.create') }}" class="footer-nav-link">Contactez-nous</a>
           </li>
-        
+
           @auth
           <li class="footer-nav-item">
             <a href="{{ route('logout') }}" class="footer-nav-link">Deconnexion</a>
           </li>
-          @else 
+          @else
           <li class="footer-nav-item">
             <a href="{{ route('login') }}" class="footer-nav-link">Connexion</a>
           </li>
@@ -53,7 +53,7 @@
           </li>
           @endauth
 
-        
+
         </ul>
 
 
@@ -71,8 +71,8 @@
             </div>
 
             <address class="content">
-              419 State Esaada
-              Fes, Fes Mekanas,Maroce
+               hay saada
+              Fes, Fes Mekenas,Maroc
             </address>
           </li>
 

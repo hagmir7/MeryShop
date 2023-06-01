@@ -9,23 +9,23 @@
                 data-bs-ride="carousel">
                 <div class="carousel-inner rounded shadow-sm">
                     <div class="carousel-item active">
-                        <a href="/category/1"><img src="/fake/cover-1.png" class="d-block w-100" alt="Clothing"></a>
+                        <a href="/category/1"><img src="/fake/cover-5.png" class="d-block w-100" alt="Clothing"></a>
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/category/2"><img src="/fake/cover-2.png" class="d-block w-100" alt="..."></a>
+                        <a href="/category/6"><img src="/fake/cover-2.png" class="d-block w-100" alt="..."></a>
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/category/3"> <img src="/fake/cover-3.png" class="d-block w-100" alt="..."></a>
+                        <a href="/category/1"> <img src="/fake/cover-1.png" class="d-block w-100" alt="..."></a>
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/category/4"> <img src="/fake/cover-4.png" class="d-block w-100" alt="..."></a>
+                        <a href="/category/4"> <img src="/fake/cover-3.png" class="d-block w-100" alt="..."></a>
                     </div>
 
                     <div class="carousel-item">
-                        <a href="/category/6"> <img src="/fake/cover-5.png" class="d-block w-100" alt="..."></a>
+                        <a href="/category/6"> <img src="/fake/cover-4.png" class="d-block w-100" alt="..."></a>
                     </div>
 
                     <div class="carousel-item">
@@ -39,7 +39,7 @@
                     <div class="sidebar-top pt-2 d-flex justify-content-center">
                         <h2 class="sidebar-title text-center">CATÉGORIES</h2>
                     </div>
-    
+
                     <ul class="sidebar-menu-category-list p-2 m-0 pb-0">
                         @foreach ($categories as $category)
                         <li class="sidebar-menu-category" style="margin-top:-20px">
@@ -48,7 +48,7 @@
                                     <img src="{{ $category->image }}" alt="{{ $category->name }}" width="25px" height="25px"> &#xa0;&#xa0;
                                     <p class="menu-title mb-3"> <a href="{{ route("category", $category->id ) }}" type="button" style="color:black;">{{ $category->name }}</a></p>
                                 </div>
-    
+
                                 <div>
                                     <a href="{{ route("category", $category->id ) }}" type="button" style="color:black;
                                         margin-left:-10%"> <ion-icon name="add-outline" class="add-icon"></ion-icon></a>
@@ -105,7 +105,7 @@
         @endforeach
     </div>
 </div>
-    
+
 @endforeach
 
 
