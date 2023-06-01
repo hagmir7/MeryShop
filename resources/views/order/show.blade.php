@@ -9,12 +9,12 @@
             <h4>Command #{{ $order->id }}</h4>
             <p class="mb-1 d-flex">Client : &#xa0; <strong><a href="{{ route('user.update', $order->user->id ) }}">{{ $order->user->first_name}} {{ $order->user->last_name}}</a></strong> </p>
 
-            <p class="mt-1">Telephone : <strong>{{ $order->phone }}</strong> </p>
+            <p class="mt-1">Téléphone : <strong>{{ $order->phone }}</strong> </p>
             <p class="mt-1">Email : <strong>{{ $order->email }}</strong> </p>
 
             <p class="mt-1">Pays : <strong>{{ $order->country }}</strong> </p>
             <p class="mt-1">Ville : <strong>{{ $order->city }}</strong> </p>
-            <p class="mt-1">Adrisse : <strong>{{ $order->address }}</strong> </p>
+            <p class="mt-1">Adresse : <strong>{{ $order->address }}</strong> </p>
             <p>Total : <strong>{{ $order->getTotal() }} MAD</strong> </p>
 
 
@@ -46,7 +46,7 @@
             @endif
             <a href="{{ route('order.delete', $order->id ) }}" class="w-100 btn mb-2 btn-danger"> <i class="bi bi-trash"></i> Annuler</a>
             @else
-                <h6 class="text-center my-5">No Products</h6>
+                <h6 class="text-center my-5">Aucun produit</h6>
             @endif
         </div>
     </div>

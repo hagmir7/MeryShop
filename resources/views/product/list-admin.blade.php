@@ -10,7 +10,7 @@
 </style>
 <div class="table-responsive  overflow-auto">
     <table id="mytable" class="table table-bordred table-striped">
-        <h4>Products ({{ $products->count() }})</h4>
+        <h4>Produits ({{ $products->count() }})</h4>
         <div class="d-flex justify-content-between">
             <p><a class="btn btn-outline-success btn-sm" href="{{ route('product.create') }}">+ Créer un produit</a></p>
             <p><button class="btn btn-outline-danger btn-sm" id="btn-delete" onclick="deleteProducts()"><i class="bi bi-trash"></i> Supprimer sélectionnée</button></p>

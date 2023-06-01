@@ -5,15 +5,15 @@
 <div class="container my-5">
     <div class="row">
         <div class="table-responsive  overflow-auto">
-            <h4>Tout le command ({{ $orders->count() }})</h4>
+            <h4>Toutes les commandes ({{ $orders->count() }})</h4>
             @if ($orders->count() > 0)
             <table id="mytable" class="table table-bordred table-striped">
-                
+
                 <thead>
                     <tr>
                         <th>Utilisateur</th>
                         <th>Total</th>
-                        <th>Status</th>
+                        <th>Statut</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -29,7 +29,7 @@
                         @else
                              <td><i class="bi bi-alarm"></i></td>
                         @endif
-                       
+
                         <td>
                             @if ($order->status == null)
                             <a href="{{ route('order.valid', $order->id ) }}" class="btn btn-sm btn-info text-white"><i class="bi bi-check-circle"></i></a>
@@ -41,7 +41,7 @@
                     </tr>
                     @endforeach
                 </tbody>
-        
+
             </table>
             @else
                 <h3 class="my-5 text-center">Aucune commande </h3>

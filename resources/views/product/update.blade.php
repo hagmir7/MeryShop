@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row g-5 align-items-center d-flex justify-content-center">
             <div class="col-lg-10" data-wow-delay="0.1s">
-                <h1 class="h3">Update Product</h1>
+                <h1 class="h3">Modifier le produit</h1>
                 @if ($errors->any())
 
                 @foreach ($errors->all() as $error)
@@ -20,23 +20,23 @@
                     @method('PUT')
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="name">Name</label>
+                            <label for="name">Nom</label>
                             <input type="text" name="name" value="{{ $product->name }}" class="form-control mb-2" >
                             @error('name') <span class="text-danger">{{$message}}</span> <br>@enderror
 
-                            <label for="price">Price</label>
+                            <label for="price">Prix</label>
                             <input type="text" name="price" value="{{ $product->price }}" class="form-control mb-2" >
                             @error('price') <span class="text-danger">{{$message}}</span> <br>@enderror
 
-                            <label for="old_price">Old Price</label>
+                            <label for="old_price">Ancien prix</label>
                             <input type="number" name="old_price" value="{{ $product->old_price }}" class="form-control mb-2">
                             @error('old_price') <span class="text-danger">{{$message}}</span> <br>@enderror
 
-                            <label for="stock">Quantity in Stock</label>
+                            <label for="stock">La quantité en dépôt</label>
                             <input type="number" name="stock" value="{{ $product->stock }}" class="form-control mb-2">
                             @error('stock') <span class="text-danger">{{$message}}</span> <br>@enderror
 
-                            <label for="name">Category</label>
+                            <label for="name">Catégorie</label>
                             <select name="category" class="form-select mb-2">
                                 <option value="">Select Category</option>
                                 @foreach ($category as $caty)
@@ -50,7 +50,7 @@
                             @error('category') <span class="text-danger">{{$message}}</span> <br>@enderror
 
 
-                            <label for="color">Select Colors</label>
+                            <label for="color">Choisir les couleurs</label>
                             <select name="color[]" class="form-select mb-2" multiple>
                                 @foreach ($colors as $color)
                                 @if ($product->colors->contains($color))
@@ -62,7 +62,7 @@
                             </select>
                             @error('color') <span class="text-danger">{{$message}}</span> <br>@enderror
 
-                            <label for="size">Select Sizes</label>
+                            <label for="size">Sélectionnez les tailles</label>
                             <select name="size[]" class="form-select mb-2" multiple>
                                 @foreach ($sizes as $size)
                                 @if ($product->sizes->contains($size))
@@ -75,7 +75,7 @@
                             @error('size') <span class="text-danger">{{$message}}</span> <br>@enderror
                         </div>
                         <div class="col-md-6">
-                            
+
                             <label for="images">Images</label>
                             <input type="file" accept="image/*" class="form-control mb-2" name="images[]" multiple>
 
@@ -95,7 +95,7 @@
                             <textarea name="description" cols="30" rows="6"class="form-control mb-2">{{ $product->description }}</textarea>
                         </div>
                     </div>
-                    <button class="btn btn-primary col-md-6">Update Product</button>
+                    <button class="btn btn-primary col-md-6">Mettre à jour le produit</button>
                 </form>
             </div>
         </div>
