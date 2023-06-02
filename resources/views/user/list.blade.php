@@ -12,17 +12,17 @@
 
 
     <table id="mytable" class="table table-bordred table-striped">
-        <h4>Users ({{ $users->count() }})</h4>
+        <h4>Utilisateurs ({{ $users->count() }})</h4>
         <div class="d-flex justify-content-between">
-            <p><a class="btn btn-outline-success btn-sm" href="{{ route('register') }}">+ Create user</a></p>
+            <p><a class="btn btn-outline-success btn-sm" href="{{ route('register') }}">+ Créer un utilisateur</a></p>
         </div>
         <thead>
 
             <tr>
                 <th>ID</th>
-                <th>Full name</th>
+                <th>Nom et prénom</th>
                 <th>Email</th>
-                <th>Role</th>
+                <th>Rôle</th>
                 <th>Actions</th>
             </tr>
         </thead>
