@@ -29,9 +29,9 @@ class ProductController extends Controller
     public function listAdmin(Request $request){
         !auth()->user()->role && abort(404);
         if(isset($request->search)){
-            $products  = Product::where('name', 'LIKE', '%' . $request->search . '%')->paginate(30);
+            $products  = Product::where('name', 'LIKE', '%' . $request->search . '%')->paginate(20);
         }else{
-            $products  = Product::paginate(30);
+            $products  = Product::paginate(20);
         }
         return view('product.list-admin', [
             'products' => $products

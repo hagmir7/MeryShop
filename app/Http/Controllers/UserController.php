@@ -15,7 +15,7 @@ class UserController extends Controller
 {
     public function list(){
         return view('user/list',[
-            'users' => User::paginate(30)
+            'users' => User::paginate(20)
         ]);
     }
 

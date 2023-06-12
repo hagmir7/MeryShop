@@ -36,7 +36,7 @@
         <div class="col-xxl-4 col-md-6 mt-2">
           <div class="card info-card sales-card border-0 shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">Produits</h5>
+            <a href="{{route('product.list.admin')}}" style="text-decoration: none ; color:black"> <h5 class="card-title" >Produits</h5></a>
 
               <div class="d-flex align-items-center">
                 <div class="product card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -56,8 +56,8 @@
         <div class="col-xxl-4 col-md-6 mt-2">
             <div class="card info-card sales-card border-0 shadow-sm">
               <div class="card-body">
-                <h5 class="card-title">Commandes</h5>
-  
+                <a href="{{route('order.list')}}" style="text-decoration: none ; color:black"> <h5 class="card-title">Commandes</h5></a>
+
                 <div class="d-flex align-items-center">
                   <div class="card-icon order rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-cart h2"></i>
@@ -67,15 +67,15 @@
                   </div>
                 </div>
               </div>
-  
+
             </div>
           </div><!-- End Sales Card -->
 
           <div class="col-xxl-4 col-md-6 mt-2">
             <div class="card info-card sales-card border-0 shadow-sm">
               <div class="card-body">
-                <h5 class="card-title">Messages</h5>
-  
+                <a href="{{route('contact.list')}}" style="text-decoration: none ; color:black"> <h5 class="card-title">Messages</h5></a>
+
                 <div class="d-flex align-items-center">
                   <div class="card-icon message rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-chat h2"></i>
@@ -85,15 +85,15 @@
                   </div>
                 </div>
               </div>
-  
+
             </div>
           </div><!-- End Sales Card -->
-   
+
              <div class="col-xxl-4 col-md-6 mt-2">
             <div class="card info-card sales-card border-0 shadow-sm">
               <div class="card-body">
-                <h5 class="card-title">Utilisateurs</h5>
-  
+                <a href="{{route('user.list')}}" style="text-decoration: none ; color:black"><h5 class="card-title">Utilisateurs</h5></a>
+
                 <div class="d-flex align-items-center">
                   <div class="card-icon user rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-person h2"></i>
@@ -103,7 +103,7 @@
                   </div>
                 </div>
               </div>
-  
+
             </div>
           </div><!-- End Sales Card -->
 
@@ -193,7 +193,7 @@
                     <div class="card recent-sales overflow-auto">
                         <div class="card-body">
                             <h5 class="card-title"> Commandes <small>| Nouvelles ({{ $new_orders->count() }})</small></h5>
-                
+
                             <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
                                 <div class="datatable-container">
                                     <table class="table table-borderless datatable datatable-table">
@@ -217,7 +217,7 @@
                                                 <td>{{ $order->details->count() }}</td>
                                                 <td>{{ $order->getTotal() }} MAD</td>
                                                 <td>
-                                                    
+
                                                     <a href="{{ route('order.valid', $order->id ) }}" class="btn btn-sm btn-info text-white"><i class="bi bi-check-circle"></i></a>
                                                     <a href="{{ route('order.show', $order->id ) }}" class="btn btn-sm btn-success"><i class="bi bi-eye"></i></a>
                                                     <a href="{{ route('order.delete', $order->id ) }}" onclick="return confirm('Voulez-vous vraiment supprimer cette commande ?')" class="btn btn-sm btn-danger"><i class="bi bi-trash3"></i></a>
@@ -232,11 +232,11 @@
                                     <div class="h5 py-5">Aucun Produit</div>
                                 </div>
                                 @endif
-                               
+
                             </div>
-                
+
                         </div>
-                
+
                     </div>
                 </div>
         </div><!-- End Revenue Card -->

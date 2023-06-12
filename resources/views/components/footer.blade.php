@@ -40,6 +40,11 @@
           </li>
 
           @auth
+          @if(auth()->user()->role === 1)
+          <li class="footer-nav-item">
+            <a href="{{ route('dashboard') }}" class="footer-nav-link">Dashboard</a>
+          </li>
+          @endif
           <li class="footer-nav-item">
             <a href="{{ route('logout') }}" class="footer-nav-link">Deconnexion</a>
           </li>

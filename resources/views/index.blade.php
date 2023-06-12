@@ -51,10 +51,12 @@
 
                                 <div>
                                     <a href="{{ route("category", $category->id ) }}" type="button" style="color:black;
-                                        margin-left:-10%"> <ion-icon name="add-outline" class="add-icon"></ion-icon></a>
+                                        margin-left:-10%"> <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </li>
+
+
                         @endforeach
                     </ul>
                 </div>
@@ -107,10 +109,6 @@
 </div>
 
 @endforeach
-
-
-
-
 
 
 

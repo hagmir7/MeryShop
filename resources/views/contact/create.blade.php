@@ -14,7 +14,7 @@
                     <input type="text" name="full_name" class="form-control mb-2">
                     @error('full_name') <span class="text-danger">{{$message}}</span> <br>@enderror
 
-                    <label for="email">Nom</label>
+                    <label for="email">Email</label>
                     <input type="text" name="email" class="form-control mb-2">
                     @error('email') <span class="text-danger">{{$message}}</span> <br>@enderror
 

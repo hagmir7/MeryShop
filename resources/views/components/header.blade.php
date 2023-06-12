@@ -111,6 +111,9 @@
            --}}
            <ul class="dropdown-menu">
             <li><a class="btn mx-1" href="{{ route('user.update', auth()->user()->id ) }}">Profile</a></li>
+            @if(auth()->user()->role === 1)
+                    <li><a class="btn mx-1" href="{{ route('dashboard') }}">Dashboard</a></li>
+            @endif
             <li><a class="btn mx-1" href="{{ route('logout') }}" style="font-size: 15px">Se déconnecter</a></li>
           </ul>
         </div>

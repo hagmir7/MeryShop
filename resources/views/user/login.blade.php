@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-5 card my-4 py-4 px-2">
+        <div class="col-md-5 card my-4 py-4 px-2" style="border-radius:15px">
             <h1 class="h3 text-center">Se connecter</h1>
             <br>
             <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
@@ -25,12 +25,12 @@
                 @error('email')
                     <div class="p-1 alert alert-danger">{{ $message }}</div>
                 @enderror
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control mt-2" placeholder="Email">
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password" class="form-control mt-2" placeholder="enter votre mot de passe">
+                <label for="email" style="margin-left:15px">E-mail</label>
+                <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control mt-2" placeholder="Email" style="width: 95%; margin-left:15px">
+                <label for="password" style="margin-left:15px">Mot de passe</label>
+                <input type="password" name="password" id="password" class="form-control mt-2" placeholder="enter votre mot de passe" style="width: 95%; margin-left:15px">
                 <button class="btn btn-pay mt-4 w-100">Se connecter</button>
-             
+
                 <a href="{{ route('register') }}" class="btn btn-outline-primary mt-4 w-100">Créer un nouveau compte</a>
             </form>
         </div>

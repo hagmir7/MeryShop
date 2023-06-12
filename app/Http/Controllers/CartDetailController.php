@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CartDetailController extends Controller
 {
-    
+
 
     public function create(Request $request){
         $user = Auth::user();
-        
+
         $cart = $user->cart;
         $orderDetail = CartDetail::where('product_id', $request->product)->where('cart_id', $cart->id);
         if(count($orderDetail->get()) > 0){
@@ -37,7 +37,7 @@ class CartDetailController extends Controller
             ]);
         }
 
-        
+
         $orderDetail = CartDetail::create([
             'cart_id' => $cart->id,
             'product_id' => $request->product,
@@ -55,7 +55,11 @@ class CartDetailController extends Controller
             'btn' => 'Retirer du panier',
             'colors' => $request->input('colors', [])
         ]);
-        
-        
+
+
     }
+
+
+
+
 }

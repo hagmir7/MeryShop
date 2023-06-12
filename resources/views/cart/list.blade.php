@@ -5,7 +5,7 @@
 
 
 <div class="container-sm">
-    
+
 
    <div class="row justify-content-center">
 
@@ -16,12 +16,12 @@
             <img src="{{ $item->product->images->first()->image }}" alt="Product 1">
             <div>
                 <h4 class="cart-item-title h6">
-                    <a href="{{ route('product', $item->product->id ) }}">{{ Str::limit($item->product->name, 50, '...') }}</a> 
+                    <a href="{{ route('product', $item->product->id ) }}">{{ Str::limit($item->product->name, 50, '...') }}</a>
                 </h4>
                 <p class="cart-item-qty mb-1">Prix: <strong>{{ $item->product->price }} MAD</strong></p>
                 <p class="cart-item-qty mb-1">Quantité: <strong>{{ $item->quantity }}</strong></p>
                 <p class="cart-item-qty mb-1">Total: <strong>{{ $item->total }} MAD</strong></p>
-              
+
             </div>
             <a href="{{ route('cart.delete', $item->id ) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer le produit')" class="btn btn-danger cart-item-remove-btn btn-sm"><i class="bi bi-trash3"></i></a>
         </div>
